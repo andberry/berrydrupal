@@ -1,0 +1,105 @@
+/*
+    Desktop Menu: style for simple dropdown
+*/
+.c-menu{
+
+  .menu-item {
+    &:before {
+        position: absolute;
+    }
+  }
+
+  ul.menu {
+    margin: 0px;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+    & > ul.menu {
+        @include mq(lg) {
+            display: flex;
+
+            /* First level items */
+            & > .menu-item {
+                display: block;
+                position: relative;
+                padding: 0px;
+
+                & > a {
+                    display: block;
+                    @include py($space_xs);
+                    @include px($space_m);
+                    color: $color_black;
+                    transition: $trans_linear;
+
+                    &:hover {
+                      color: $color_primary;
+                    }
+                }
+
+                &:first-child > a{
+                    padding-left: 0px;
+                }
+
+                &:last-child > a{
+                    padding-right: 0px;
+                }
+
+                &.menu-item--active-trail{
+                    & > a {
+                        color: $color_primary;
+                    }
+                }
+
+
+
+                /*
+                    Submenu (level 2)
+                */
+                &.menu-item--expanded {
+                    position: relative;
+
+                    & > .menu {
+                        position: absolute;
+                        z-index: 1000;
+                        top: 100%;
+                        left: 0px;
+                        display: block;
+                        width: 250px;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: $trans_linear_fast;
+                        background: $color_white;
+
+                        & > .menu-item{
+                            & > a {
+                                @include px($space_m);
+                                display: block;
+                                color: $color_black;
+
+                                &:hover {
+                                  color: $color_primary;
+                                }
+                            }
+
+                            &.menu-item--active-trail{
+                                & > a {
+                                    color: $color_primary;
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        & > .menu {
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

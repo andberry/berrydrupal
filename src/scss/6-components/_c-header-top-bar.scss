@@ -1,0 +1,57 @@
+.c-header-top-bar {
+    background: $color_black;
+    color: $color_white;
+    @include py($space_2xs);
+    transition: $trans_easeOutCubic;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &.c-header-top-bar--hidden {
+        max-height: 0px;
+        @include py(0);
+    }
+}
+
+.c-header-top-bar__content {
+    display: flex;
+    align-items: center;
+}
+
+.c-header-top-bar__close {
+    background: transparent;
+    border: none;
+    appearance: none;
+    cursor: pointer;
+    padding: $space_xs;
+    transform: rotate(0deg);
+    transform-origin: center;
+
+
+    .icon {
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: $border_radius;
+
+        i {
+            color: $color_white;
+            font-size: 20px;
+            transition: $trans_linear_fast;
+        }
+    }
+
+    &:hover {
+        i {
+            color: $color_blue_royal;
+        }
+    }
+}

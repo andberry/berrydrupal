@@ -1,0 +1,46 @@
+{% set boxed = (boxed is not defined) ? false : boxed %}
+
+<div class="layout-container">
+
+    {% if page.header_top_bar %}
+        {% include '@berry/layout/c-header-top-bar.html.twig' %}
+    {% endif %}
+
+    {% include '@berry/layout/header.html.twig' with {'page': page } only %}
+
+    <main id="main" role="main">
+
+        {% if page.hero %}
+            <div id="hero">
+                {{ page.hero }}
+            </div>
+        {% endif %}
+
+        {% if page.content_top %}
+            <div id="content-top">
+                <div class="container">
+                    {{ page.content_top }}
+                </div>
+            </div>
+        {% endif %}
+
+        <div id="main-content"> {# link is in html.html.twig #}
+            {% if boxed %}
+                <div class="container">
+                    {{ page.content }}
+                </div>
+            {% else %}
+                {{ page.content }}
+            {% endif %}
+        </div>
+
+        {% if page.content_bottom %}
+            <div id="content-bottom">
+                {{ page.content_bottom }}
+            </div>
+        {% endif %}
+    </main>
+
+    {% include '@berry/layout/footer.html.twig' %}
+
+</div>{# /.layout-container #}

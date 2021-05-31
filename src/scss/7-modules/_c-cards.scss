@@ -1,0 +1,15 @@
+.c-cards {
+    @include py($space_l);
+
+    @include mq(lg) {
+        @include py($space_3xl);
+    }
+
+    .c-card {
+        @include grid-cell(2, 4);
+    }
+}
+
+.c-cards__title {
+    margin-bottom: $space_l;
+}

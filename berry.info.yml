@@ -1,0 +1,27 @@
+name: Berry
+type: theme
+description: 'Berry Drupal Theme, UI Components based, with PatternLab integrate'
+core_version_requirement: ^8 || ^9
+base theme: classy
+logo: images/logo.png
+libraries:
+  - berry/global-css
+  - berry/global-js
+stylesheets-remove:
+  - core/themes/classy/css/components/menu.css
+  - core/themes/classy/css/components/form.css
+  - core/themes/stable/css/system/components/fieldgroup.module.css
+  - core/themes/stable/css/core/assets/vendor/normalize-css/normalize.css
+  - core/themes/stable/css/core/normalize-fixes.css
+  - modules/we_megamenu/assets/includes/bootstrap/css/bootstrap.min.css
+regions:
+  header_top_bar: Header Top Bar
+  header_top_nav: Header Top Nav
+  header_brand: Header Brand
+  header_main_nav: Header Main Nav
+  hero: Hero
+  content_top: Content Top
+  content: Content
+  footer_top: Footer Top
+  footer_main: Footer Main
+  footer_bottom: Footer Bottom

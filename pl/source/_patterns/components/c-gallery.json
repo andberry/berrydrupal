@@ -1,0 +1,28 @@
+{
+    "title": "Lorem ipsum dolor sit amet",
+    "items": [
+        {
+            "link": "https://placeimg.com/1000/800/nature",
+            "image_src": "https://placeimg.com/600/400/nature",
+            "image_alt": "Image 1 Alt: Nature"
+        },
+
+        {
+            "link": "https://placeimg.com/1000/800/tech",
+            "image_src": "https://placeimg.com/600/400/tech",
+            "image_alt": "Image 2 Alt: Tech"
+        },
+
+        {
+            "link": "https://placeimg.com/1000/800/people",
+            "image_src": "https://placeimg.com/600/400/people",
+            "image_alt": "Image 3 Alt: People"
+        },
+
+        {
+            "link": "https://placeimg.com/1000/800/nature",
+            "image_src": "https://placeimg.com/600/400/nature",
+            "image_alt": "Image 1 Alt: Nature"
+        }
+    ]
+}

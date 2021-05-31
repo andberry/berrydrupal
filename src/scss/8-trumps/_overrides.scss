@@ -1,0 +1,22 @@
+nav li:before {
+    position: absolute;
+}
+
+/*
+    lightgallery.js
+*/
+.lg-item {
+    .lg-image {
+        max-width: 80%;
+    }
+}
+
+.lg-actions{
+    .lg-next {
+        right: 5px;
+    }
+
+    .lg-prev {
+        left: 5px;
+    }
+}

@@ -1,0 +1,92 @@
+/*
+    Flex Grid: Row
+*/
+.l-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -#{$grid_col_gap / 2};
+    margin-right: -#{$grid_col_gap / 2};   
+}
+
+
+
+/*
+    Flex grid: Alignment classes
+*/
+.l-row {
+    &.l-valign-top {
+        align-items: flex-start;
+    }
+
+    &.l-valign-bottom {
+        align-items: flex-end;
+    }
+
+    &.l-valign-middle {
+        align-items: center;
+    }
+
+    &.l-align-left {
+        justify-content: flex-start;
+    }
+
+    &.l-align-right {
+        justify-content: flex-end;
+    }
+
+    &.l-align-center {
+        justify-content: center;
+    }
+
+    &.l-align-justify {
+        justify-content: space-between;
+    }
+
+    &.l-align-spaced {
+        justify-content: space-around;
+    }
+}
+
+
+
+/*
+    Flex Grid: Cols with Width classes (with responsive variants)
+*/
+// Common style
+.l-col {
+    padding-left: $grid_col_gap / 2;
+    padding-right: $grid_col_gap / 2;
+}
+
+// Width classes: no media queries
+@for $i from 1 to $grid_cols + 1 {
+    .l-col--#{$i} {
+        flex-basis: percentage($i / $grid_cols);
+        max-width: percentage($i / $grid_cols);
+    }
+}
+
+// Width classes: per breakpoints
+@each $breakpointName, $breakpointValue in $mq-breakpoints{
+    @for $i from 1 to $grid_cols + 1 {
+        .#{$breakpointName}\:l-col--#{$i} {
+            @include mq($breakpointName){
+                flex-basis: percentage($i / $grid_cols);
+                max-width: percentage($i / $grid_cols);
+            }
+        }
+    }
+}
+
+
+
+
+/*
+    Flex Grid: no gap cols
+*/
+.l-row--no-gap {
+    & > .l-col {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}

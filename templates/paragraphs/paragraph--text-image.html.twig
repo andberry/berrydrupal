@@ -1,0 +1,7 @@
+{% include '@berry/components/c-textimage.html.twig' with {
+    'title_tag': content.field_heading_type,
+    'title': content.field_title,
+    'text': content.field_content,
+    'image': content.field_image.0,
+    'imageposition': content.field_image_position
+}%}

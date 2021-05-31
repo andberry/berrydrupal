@@ -1,0 +1,125 @@
+/*
+    Mega menu base style: INCOMPLETE, JUST A WIP
+*/
+nav.menu--main{
+
+    /* menu level 1 */
+    & > ul.menu {
+        @include mq(lg) {
+            & > .menu-item {
+                &.menu-item--expanded {
+                    & > a{
+                        position: relative;
+                    }
+
+                    /* menu level 2 */
+                    & > .menu {
+                        display: flex !important;
+
+                        &.menu-item--expanded {
+                            & > a {
+
+                            }
+
+                            /* menu level 3 */
+                            & > .menu {
+
+                                display: block;
+                                position: static;
+                                width: 100%;
+                                min-width: 0px;
+
+                                /* level 3: li */
+                                & > .menu-item {
+
+                                    /* menu level 3: a (actual clickable links) */
+                                    & > a{
+                                        display: block;
+                                        font-size: 15px;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/*
+    Mega Menu with 2 columns: classes "mm" and "mm2" on top li menu element
+*/
+nav.menu--main {
+    & > ul.menu {
+        & > .menu-item--expanded {
+            position: static;
+        }
+
+        & > .menu {
+            width: 100%;
+
+            & .menu {
+                width: 25%;
+            }
+        }
+    }
+}
+
+
+
+/*
+    Mega Menu Full Boxed: classes "mm" and "mm--full-menu" on top li menu element
+*/
+#menu-main-menu{
+    & > .is-dropdown-submenu-parent.mm--full-menu{
+        position: static;
+
+        & > .submenu.is-dropdown-submenu{
+            width: 100%;
+
+            & > .is-dropdown-submenu-parent{
+                width: 25%;
+            }
+        }
+    }
+}
+
+
+
+/*
+    Mega Menu full boxed: classes "mm" and "mm--full-boxed" on top li menu element
+
+    Pay attention: uncomment only if/when needed,
+    because mm--full-menu and mm--full-boxed are mutually esclusive
+*/
+/*
+#header-main{
+    & > .row{
+        position: relative;
+    }
+}
+
+#menu-main-menu{
+    position: static;
+
+    & > .is-dropdown-submenu-parent.mm--full-boxed{
+        position: static;
+
+        & > .is-dropdown-submenu{
+            top: calc(100% + 15px);
+        }
+
+        & > .submenu.is-dropdown-submenu{
+            width: 100%;
+
+            & > .is-dropdown-submenu-parent{
+                width: 25%;
+            }
+        }
+    }
+}
+*/

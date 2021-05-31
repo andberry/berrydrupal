@@ -1,0 +1,19 @@
+#block-infotopbar {
+    .field--name-body {
+        font-size: 14px;
+        color: $color_blue_dark;
+
+        p {
+            line-height: 1.2;
+        }
+
+        a {
+            transition: $trans_linear_fast;
+            color: $color_blue_dark;
+
+            &:hover {
+                color: $color_blue_royal;
+            }
+        }
+    }
+}

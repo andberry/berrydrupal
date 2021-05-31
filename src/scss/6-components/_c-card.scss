@@ -1,0 +1,23 @@
+.c-card {
+    border-radius: $border_radius;
+    border: thin solid $color_secondary;
+    overflow: hidden;
+}
+
+.c-card__link {
+    display: block;
+    text-decoration: none;
+    @include scale-on-hover();
+}
+
+.c-card__main {
+    overflow: hidden;
+}
+
+.c-card__footer {
+    padding: $space_m;
+}
+
+.c-card__title {
+    @include my(0);
+}

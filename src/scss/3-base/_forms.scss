@@ -1,0 +1,83 @@
+/*
+    Forms elements
+*/
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="file"],
+input[type="date"],
+textarea {
+    width: 100%;
+    height: $form-input_heigh;
+    line-height: 1;
+    border-radius: $border_radius;
+    padding: 0px $space_xs;
+    border: thin solid lighten($color_grey-dark, 40%);
+    max-width: 100%;
+    transition: $trans_linear_fast;
+    font-size: 16px;
+    background: $color_white;
+    color: $color_black;
+
+    &:active,
+    &:focus {
+        outline: none;
+        box-shadow: $box_shadow;
+    }
+}
+
+
+
+::placeholder {
+    color: $color_black0;
+    opacity: 0.3;
+}
+
+
+
+textarea {
+    height: auto;
+    padding: $space_s $space_xs;
+}
+
+
+
+select {
+    width: 100%;
+    height: $form-input_heigh;
+    line-height: 1;
+    padding: 0px $space_xl 0px $space_m;
+    border-radius: $border_radius;
+    border: thin solid lighten($color_grey-dark, 40%);
+    background: $color_white;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    max-width: 100%;
+    width: 100%;
+    font-size: 1rem;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+
+
+fieldset {
+    border: none;
+    padding: 0px;
+}
+
+
+
+input[type="submit"] {
+    @extend .c-button;
+
+    &:focus {
+        outline: none;
+    }
+}

@@ -1,0 +1,178 @@
+.webform-submission-form {
+    @include grid($grid_cols, $grid_col_gap, 0);
+    align-items: start;
+}
+
+.form-item,
+.form-actions {
+    @include grid-cell-span(2);
+    @include mq(md) {
+        @include grid-cell-span(6);
+    }
+}
+
+.form-item {
+    margin-bottom: $space_l;
+}
+
+
+
+.form-item label,
+.form-composite legend {
+    display: block;
+    margin-bottom: $space_2xs;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+
+
+/*
+    Select
+*/
+.form-type-select {
+    position: relative;
+
+    &:after {
+        content: fa-content($fa-var-angle-down);
+        font-family: $font_family_icons;
+        font-weight: 700;
+        position: absolute;
+        bottom: 8px;
+        right: $space_m;
+        pointer-events: none;
+    }
+}
+
+
+
+/*
+    Checkbox/checkboxes and radio/radios
+*/
+.form-type-checkbox,
+.form-type-radio {
+    display: inline-flex;
+    display: flex;
+    align-items: center;
+
+    input {
+        margin-right: $space_xs;
+    }
+
+    label {
+        margin: 0px;
+        padding: 0px;
+        cursor: pointer;
+    }
+}
+
+.webform-type-checkboxes,
+.webform-type-radios {
+    margin-bottom: $space_l;
+
+    legend {
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+    .form-item {
+        margin-bottom: 0px;
+        padding-right: $space_m;
+    }
+}
+
+
+
+/*
+    Phone field type
+*/
+.form-item {
+    .iti {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+
+/*
+    File
+*/
+.webform-file-button {
+    margin: 0px;
+    width: 100%;
+    border-radius: $border_radius;
+    padding: $space_s $space_m;
+    border: thin solid lighten($color_grey-dark, 40%);
+    max-width: 100%;
+    transition: $trans_linear_fast;
+    font-size: 16px;
+    background: $color_white;
+    color: $color_black;
+    cursor: pointer;
+
+    &:before {
+        display: none;
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+        box-shadow: $box_shadow;
+    }
+}
+
+
+
+/*
+    Multistep form
+*/
+.progress-step {
+    .progress-marker:before {
+        background: $color_black0;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    // active number
+    &.is-active {
+        .progress-marker::before {
+            background: $color_blue_royal;
+        }
+    }
+}
+
+// line
+.webform-progress-tracker {
+    @include my(0);
+
+    .progress-step .progress-marker:after {
+        background: $color_black0;
+        z-index: 10;
+        height: 2px;
+        @include abs-vertical-center();
+    }
+
+    .progress-step .progress-text {
+        text-transform: uppercase;
+        font-weight: 700;
+        color: $color_black0;
+    }
+
+    .progress-step:not(.is-active) .progress-marker::before {
+        background-color: $color_black0;
+    }
+}
+
+// continue button
+.form-actions {
+    .webform-button--next {
+        @extend .c-button;
+    }
+
+    .webform-button--previous {
+        @extend .c-button--light;
+    }
+}

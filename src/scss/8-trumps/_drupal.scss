@@ -1,0 +1,70 @@
+/*
+    Setup max width for page?
+*/
+.layout-container {
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+/*
+    Drupal tabs
+*/
+.block-local-tasks-block {
+    padding-top: $space_m;
+}
+
+
+
+
+/*
+    Breadcrumbs
+*/
+.breadcrumb__wrapper {
+    @include py($space_s);
+    height: 40px;
+
+    @include mq(md) {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+
+    li {
+        @include px(6px);
+        font-weight: 500;
+        text-transform: uppercase;
+        color: $color_black0;
+        font-size: 12px;
+
+        @include mq(lg) {
+            font-size: 14px;
+        }
+
+        &:before {
+            content: '/';
+            position: relative;
+            left: -6px;
+            font-weight: 400;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: 400;
+        color: $color_black0;
+        font-size: 12px;
+
+        @include mq(lg) {
+            font-size: 14px;
+        }
+    }
+}
+
+.breadcrumb {
+    padding: 0px;
+}

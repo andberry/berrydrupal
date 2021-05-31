@@ -1,0 +1,18 @@
+@each $name, $val in $colors {
+
+    // Vertical margins
+    .color--#{$name} {
+        color: $val;
+    }
+
+    .bg-color--#{$name} {
+        background-color: $val;
+
+        &.pl-swatch {
+            &:after {
+                content: '#{$name}: #{$val}';
+                color: #{$val};
+            }
+        }
+    }
+}

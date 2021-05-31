@@ -1,0 +1,51 @@
+<?php
+/*
+    Add content-type to page templates suggestions,
+    so we can use page--CONTENT-TYPE.html.twig
+*/
+function berry_theme_suggestions_page_alter (array &$suggestions, array $variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $suggestions[] = 'page__' . $node->bundle();
+  }
+}
+
+
+
+/*
+    Field template suggestion:
+    for some fields we just need the field content, without wrapperd and labels
+*/
+function berry_theme_suggestions_field_alter (&$suggestions, &$variables) {
+    $content_only_fields_single = array(
+        // drupal node title aka label
+        'title',
+
+        // fields used across content-types / paragraphs
+        'field_title',
+        'field_heading_type',
+        'field_content',
+        'field_text_image_title',
+        'field_text_image_content',
+        'field_image_position',
+
+
+        // image fields (useless here if we use field.0 ?)
+        'field_image',
+
+        // fields used in views: useless here, unless you use "Use field template" in field setting in view)
+    );
+
+    if (in_array($variables['element']['#field_name'], $content_only_fields_single)) {
+        $suggestions[] = 'field__content_only__single';
+    }
+
+
+    $content_only_fields_multiple = array(
+        'field_flexible_page_contents',
+        'field_cards'
+    );
+
+    if (in_array($variables['element']['#field_name'], $content_only_fields_multiple)) {
+        $suggestions[] = 'field__content_only__multiple';
+    }
+}

@@ -1,0 +1,9 @@
+global-css:
+  version: 1.0
+  css:
+    theme:
+      css/style.min.css: { minified: false }
+global-js:
+  version: 1.0
+  js:
+    js/app.min.js: {}

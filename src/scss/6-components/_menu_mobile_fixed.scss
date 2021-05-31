@@ -1,0 +1,97 @@
+.c-header {
+  z-index: 100;
+  position: relative;
+}
+
+.is-mobile-menu {
+    @include mq($until: lg){
+        position: fixed;
+        z-index: 90;
+        top: 60px;
+        left: 0;
+        right: 0;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100%;
+
+        // actual style
+        height: calc(100vh - 64px);
+        background: $color_white;
+        visibility: hidden;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        transition: all 400ms $trans_func_easeInOutCubic;
+
+
+        /*
+          To have a scrollable menu with overflow you must not have e vertical centered menu
+        */
+        // @include flex-align(center, middle);
+        overflow-y: scroll;
+        padding-top: 0px;
+
+  		a {
+            width: 100%;
+            display: block;
+            padding: $grid_col_gap;
+  		}
+
+      & > ul {
+        list-style-type: none;
+        width: 100%;
+
+        /* li - level 1 */
+        & > li {
+          width: 100%;
+
+          /* ul - level 2*/
+          & > ul{
+            background: $color_grey;
+            padding: 0px;
+            margin-top: 6px;
+            margin-bottom: 6px;
+            padding-bottom: 8px;
+            padding-top: 6px;
+
+            /* li - level 2 */
+            & > li{
+
+              & > a{
+                padding-left: 24px;
+                padding-top: 12px;
+                padding-bottom: 12px;
+              }
+
+              /* ul - level 3 */
+              & > ul{
+                display: block !important;
+                margin: 0px;
+                background: $color_grey;
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+}
+
+
+
+
+
+// Avoid body scroll when mobile menu is open
+body.open-mobile-menu {
+    @include mq($until: lg){
+        overflow: hidden;
+    }
+
+    .is-mobile-menu {
+        @include mq($until: lg){
+          visibility: visible;
+          -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+        }
+      }
+}

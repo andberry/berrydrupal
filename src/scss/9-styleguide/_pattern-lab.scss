@@ -1,0 +1,61 @@
+/**
+ * This stylesheet is for styles you want to include only when displaying demo
+ * styles for grids, animations, color swatches, etc.
+ * These styles will not be your production CSS.
+ */
+#sg-patterns {
+  -webkit-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+  max-width: 100%;
+  padding: 0 0.5em;
+}
+
+.demo-animate {
+  background: #ddd;
+  padding: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pl-colors {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  @include grid();
+
+  li {
+    @include grid-cell-span(2);
+    @include mq(md) {
+        @include grid-cell-span(3);
+    }
+    @include mq(lg) {
+        @include grid-cell-span(2);
+    }
+    padding: 0.5em;
+    border: 1px solid $color_grey;
+    border-radius: 8px;
+  }
+}
+
+.pl-swatch {
+  display: block;
+  height: $space_3xl;
+  border-radius: 5px;
+  position: relative;
+  margin-bottom: 24px;
+
+  &:after {
+      display: block;
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0px;
+      width: 100%;
+      font-size: 14px;
+  }
+}
+
+.pl-label {
+  line-height: 1;
+}

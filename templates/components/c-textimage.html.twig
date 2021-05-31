@@ -1,0 +1,21 @@
+{% set imageposition = imageposition ? imageposition : 'left' %}
+{% set title_tag = (title_tag is not defined) ? 'div' : title_tag %}
+
+<div class="c-textimage c-textimage--i{{ imageposition }}">
+
+    <div class="grid--super c-textimage__container">
+        <div class="c-textimage__content">
+            {% if title %}
+                <{{title_tag}} class="c-textimage__title">{{ title }}</{{title_tag}}>
+            {% endif %}
+
+            <div class="c-textimage__text">
+                {{ text }}
+            </div>
+        </div>
+
+        <div class="c-textimage__image">
+            {{ image }}
+        </div>
+    </div>
+</div>

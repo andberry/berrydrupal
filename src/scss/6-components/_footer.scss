@@ -1,0 +1,431 @@
+.c-footer {
+
+}
+
+.c-footer-top {
+    // slashy gradient blue/lightblue
+    position: relative;
+    @include mq(md) {
+        background: linear-gradient($slashy_degs, rgba(darken($color_blue_royal, 5%), 0.9) 0%, rgba(darken($color_blue_royal, 5%), 0.9) 50%, rgba(lighten($color_blue_royal, 40%), 1) 50.1%, rgba(lighten($color_blue_royal, 40%), 1) 100%);
+    }
+
+    &:after {
+        // background image
+        content: '';
+        position: absolute;
+        top: 25%;
+        left: 0px;
+        width: 100%;
+        height: 75%;
+        @include bg-image('../images/footer_cityscape@2x.png');
+        background-position: top;
+        z-index: 20;
+
+        @include mq($until: md) {
+            display: none;
+        }
+    }
+
+    &:before {
+        // gradient transparent/white-transparent to colorize the image
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 30;
+        background: linear-gradient($slashy_degs, transparent 0%, transparent 50%, rgba($color_white, 0.85) 50.1%, rgba($color_white, 0.85) 100%);
+        @include mq($until: md) {
+            display: none;
+        }
+    }
+
+    .c-prefooter {
+        @include mq(md) {
+            @include py(0);
+            @include py($space_l);
+        }
+
+        .grid {
+            @include mq($until: md) {
+                grid-row-gap: 0px;
+            }
+        }
+    }
+
+    .c-prefooter__block {
+        @include py($space_m);
+        position: relative;
+        z-index: 100;
+        @include grid-cell-span(2);
+
+        @include mq(md) {
+            @include py($space_2xl);
+        }
+
+        .c-prefooter__block__button {
+            box-shadow: $box_shadow;
+        }
+
+        &--1 {
+            color: $color_white;
+
+            @include mq($until: md) {
+                margin-left: -#{$grid_col_gap / 2};
+                margin-right: -#{$grid_col_gap / 2};
+                padding-left: #{$grid_col_gap / 2};
+                padding-right: #{$grid_col_gap / 2};
+                @include py($space_2xl);
+                background: $color_blue_royal;
+            }
+
+            @include mq(md) {
+                @include grid-cell-span(5, 2);
+            }
+
+            @include mq(xl) {
+                @include grid-cell-span(4, 2);
+            }
+
+            .c-prefooter__block__button {
+                color: $color_blue_royal;
+                background: $color_blue_sky2;
+
+                &:hover {
+                    background: lighten($color_blue_sky, 5%);
+                }
+
+                .button__icon {
+                    background: $color_blue_dark;
+
+                    i {
+                        color: $color_blue_sky2;
+                    }
+                }
+            }
+        }
+
+        &--2 {
+            color: $color_blue_dark;
+
+            @include mq($until: md) {
+                margin-left: -#{$grid_col_gap / 2};
+                margin-right: -#{$grid_col_gap / 2};
+                padding-left: #{$grid_col_gap / 2};
+                padding-right: #{$grid_col_gap / 2};
+                background: $color_blue_sky;
+                @include py($space_2xl);
+                position: relative;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 25%;
+                    left: 0px;
+                    width: 100%;
+                    height: 75%;
+                    @include bg-image('../images/footer_cityscape@2x.png');
+                    background-position: top;
+                    z-index: -5;
+                }
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 100%;
+                    height: 100%;
+                    background: $color_white;
+                    opacity: 0.8;
+                    z-index: -2;
+                }
+
+            }
+
+            @include mq(md) {
+                @include grid-cell-span(5, 8);
+            }
+
+            @include mq(xl) {
+                @include grid-cell-span(4, 8);
+            }
+
+            .c-prefooter__block__button {
+                @include mq($until: md) {
+                    color: $color_white;
+                    background: $color_blue_royal;
+                }
+                color: $color_blue_royal;
+                background: $color_blue_sky2;
+                @include mq(lg) {
+                    background: $color_blue_royal;
+                    color: $color_white;
+                }
+
+
+                &:hover {
+                    background: lighten($color_blue_royal, 5%);
+                }
+
+                .button__icon {
+                    background: $color_green;
+                    i {
+                        color: $color_blue_dark;
+                    }
+                }
+            }
+        }
+    }
+
+    .c-prefooter__block__title {
+        font-weight: 700;
+        font-size: remCalc(28);
+    }
+
+    .c-prefooter__block__text {
+        margin-top: $space_m;
+        font-weight: 500;
+        @include responsive-property("font-size", $font_size_6);
+    }
+
+    .c-prefooter__block__button {
+        margin-top: $space_l;
+
+        i {
+            font-size: remCalc(22);
+        }
+    }
+
+}
+
+.c-footer-main {
+    background: $color_black;
+    color: $color_white;
+    padding-top: $space_2xl;
+    padding-bottom: $space_3xl;
+
+    a {
+        color: $color_white;
+    }
+}
+
+.region-footer-main {
+    @include grid();
+
+    & > * {
+        @include grid-cell-span(2);
+    }
+
+    .menu-item {
+        padding: 0px;
+        a {
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            text-decoration: none;
+            @include py($space_xs);
+            display: inline-block;
+            line-height: 1;
+
+            &:hover {
+                color: $color_green;
+            }
+        }
+    }
+
+    #block-webform {
+        @include mq(md) {
+            @include grid-cell-span(6);
+        }
+
+        @include mq(xl) {
+            @include grid-cell-span(3);
+        }
+    }
+
+    #block-footermenu1 {
+        @include mq(md) {
+            @include grid-cell-span(6);
+        }
+
+        @include mq(xl) {
+            @include grid-cell-span(3);
+            @include px($space_2xl);
+        }
+
+        /*
+        @include mq(xl) {
+            @include grid-cell-span(2, 5);
+        }
+        */
+    }
+
+    #block-footermenu2 {
+        @include mq(md) {
+            @include grid-cell-span(6);
+        }
+
+        @include mq(xl) {
+            @include grid-cell-span(3);
+        }
+        /*
+        @include mq(xl) {
+            @include grid-cell-span(2);
+        }
+        */
+    }
+
+    #block-socialsfooter {
+        @include mq(md) {
+            @include grid-cell-span(6);
+        }
+
+        @include mq(xl) {
+            @include grid-cell-span(3);
+        }
+    }
+
+    h2 {
+        @include responsive-property("font-size", $font_size_5);
+        margin-bottom: $space_s;
+        font-weight: 700;
+    }
+
+    #block-footermenu1,
+    #block-footermenu2,
+    #block-socialsfooter {
+        margin-top: $space_2xl;
+        @include mq(md) {
+            margin-top: 0px;
+            padding-top: $space_l;
+        }
+    }
+
+    ul.menu {
+        @include menu-base-v();
+    }
+
+    .block-webform {
+        background: $color_white;
+        color: $color_black;
+        padding: $space_l;
+        position: relative;
+
+        .form-actions {
+            position: absolute;
+            bottom: 0px;
+            right: $space_l;
+            transform: translateY(50%);
+            margin: 0px;
+        }
+
+        .form-item-privacy-policy {
+            padding-bottom: remCalc(12);
+            padding-left: 0px;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            border: thin solid $color_black;
+            color: $color_black;
+        }
+    }
+}
+
+.c-footer-bottom {
+    background: $color_black0;
+    color: $color_white;
+    display: flex;
+    justify-content: center;
+    @include py($space_m);
+
+    .menu {
+        @include mq(md) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .menu-item {
+        &:not(:last-child) {
+            @include mq(md) {
+                a:after {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    top: 0px;
+                    right: 0px;
+                    width: 1px;
+                    height: 100%;
+                    background-color: $color_white;
+                }
+            }
+
+        }
+
+        a {
+            display: inline-block;
+            position: relative;
+            color: $color_white;
+            font-weight: 300;
+            font-size: 14px;
+            text-decoration: none;
+            margin-bottom: $space_s;
+
+            @include mq(md) {
+                @include px($space_s);
+                margin-bottom: 0px;
+            }
+
+            @include mq(lg) {
+                @include px($space_m);
+            }
+        }
+    }
+}
+
+.menu--footer-bottom-menu {
+    & > .menu {
+        @include mq(md) {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+
+#block-socialsfooter {
+    .field__item {
+        display: inline-block;
+        margin-right: $space_xs;
+
+        a {
+            display: block;
+            border-radius: 50%;
+            background: $color_white;
+            color: $color_black0;
+            text-decoration: none;
+            width: 40px;
+            height: 40px;
+            position: relative;
+
+            i {
+                display: block;
+                @include abs-center();
+                font-size: remCalc(20);
+                transition: $trans_easeOutCubic_fast;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            &:hover {
+                color: $color_blue_royal;
+                i {
+                    transform: translateX(-50%) translateY(calc(-50% - 2px));
+                }
+            }
+        }
+    }
+}

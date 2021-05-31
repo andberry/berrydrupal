@@ -1,0 +1,44 @@
+/*
+    Components
+
+    Specific cosmetic elements of UI,
+    first layer that introduce visual styling:
+    buttons, forms, products-list
+
+    Use explicit class names (eg. .products-list)
+*/
+
+
+
+/*
+    Vendor components/classes
+*/
+/* vendors */
+/* @import './font-awesome/fontawesome'; */ // already imported in tools
+@import './font-awesome/solid';
+@import './font-awesome/regular';
+@import './font-awesome/brands';
+
+@import 'lightgallery.js/src/sass/lightgallery';
+
+
+
+/*
+    Project components
+*/
+@import 'header';
+@import 'c-header-top-bar';
+@import 'footer';
+
+@import 'menu_mobile_fixed';
+@import 'menu_mobile_toggle';
+@import 'menu_desktop_dropdown';
+// @import 'menu_desktop_megamenus';
+
+@import 'buttons';
+
+@import 'c-hero';
+@import 'c-simpletext';
+@import 'c-gallery';
+@import 'c-textimage';
+@import 'c-card';

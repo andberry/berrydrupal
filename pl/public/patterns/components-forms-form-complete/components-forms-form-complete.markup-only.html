@@ -1,0 +1,98 @@
+<form action="#" class="webform-submission-form">
+    <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-name form-item-name">
+        <label for="edit-name" class="js-form-required form-required">Text field</label>
+        <input data-drupal-selector="edit-name" type="text" id="edit-name" name="name" value="" size="60" maxlength="255" class="form-text required" required="required" aria-required="true">
+    </div>
+
+    <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-text-field-with-placeholder form-item-text-field-with-placeholder">
+        <label for="edit-text-field-with-placeholder">Text field with placeholder</label>
+        <input data-drupal-selector="edit-text-field-with-placeholder" type="text" id="edit-text-field-with-placeholder" name="text_field_with_placeholder" value="" size="60" maxlength="255" placeholder="Text field placeholder" class="form-text">
+    </div>
+
+    <div class="js-form-item form-item js-form-type-email form-type-email js-form-item-email form-item-email">
+        <label for="edit-email" class="js-form-required form-required">Email field</label>
+        <input data-drupal-selector="edit-email" type="email" id="edit-email" name="email" value="" size="60" maxlength="254" class="form-email required" required="required" aria-required="true">
+    </div>
+
+    <div class="js-form-item form-item js-form-type-password form-type-password js-form-item-password-field form-item-password-field">
+        <label for="edit-password-field">Password field</label>
+        <input data-drupal-selector="edit-password-field" type="password" id="edit-password-field" name="password_field" size="60" maxlength="128" class="form-text">
+    </div>
+
+    <div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-message form-item-message">
+        <label for="edit-message" class="js-form-required form-required">Textarea field</label>
+        <div class="form-textarea-wrapper">
+            <textarea data-drupal-selector="edit-message" id="edit-message" name="message" rows="5" cols="60" class="form-textarea required resize-vertical" required="required" aria-required="true"></textarea>
+        </div>
+    </div>
+
+    <div class="js-form-item form-item js-form-type-number form-type-number js-form-item-number-field form-item-number-field">
+        <label for="edit-number-field">Number field</label>
+        <input data-drupal-selector="edit-number-field" type="number" id="edit-number-field" name="number_field" value="" step="any" class="form-number">
+    </div>
+
+    <div class="js-form-item form-item js-form-type-tel form-type-tel js-form-item-telephone-number form-item-telephone-number">
+        <label for="edit-telephone-number">Telephone number</label>
+        <input data-drupal-selector="edit-telephone-number" type="tel" id="edit-telephone-number" name="telephone_number" value="" size="30" maxlength="128" class="form-tel">
+    </div>
+
+    <div class="js-form-item form-item js-form-type-url form-type-url js-form-item-url-field form-item-url-field">
+        <label for="edit-url-field">URL field</label>
+        <input data-drupal-selector="edit-url-field" type="url" id="edit-url-field" name="url_field" value="" size="60" maxlength="255" class="form-url">
+    </div>
+
+    <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-checkbox-field form-item-checkbox-field">
+        <input data-drupal-selector="edit-checkbox-field" type="checkbox" id="edit-checkbox-field" name="checkbox_field" value="1" class="form-checkbox">
+        <label for="edit-checkbox-field" class="option">Checkbox field</label>
+    </div>
+
+    <fieldset data-drupal-selector="edit-checkboxes-field" id="edit-checkboxes-field--wrapper" class="checkboxes--wrapper fieldgroup form-composite webform-composite-visible-title js-webform-type-checkboxes webform-type-checkboxes js-form-item form-item js-form-wrapper form-wrapper">
+        <legend>
+            <span class="fieldset-legend">Checkboxes field</span>
+        </legend>
+
+        <div class="fieldset-wrapper">
+            <div id="edit-checkboxes-field" class="js-webform-checkboxes webform-options-display-one-column form-checkboxes">
+                <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-checkboxes-field-yes form-item-checkboxes-field-yes">
+                    <input data-drupal-selector="edit-checkboxes-field-yes" type="checkbox" id="edit-checkboxes-field-yes" name="checkboxes_field[Yes]" value="Yes" class="form-checkbox">
+                    <label for="edit-checkboxes-field-yes" class="option">Yes</label>
+                </div>
+                <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-checkboxes-field-no form-item-checkboxes-field-no">
+                    <input data-drupal-selector="edit-checkboxes-field-no" type="checkbox" id="edit-checkboxes-field-no" name="checkboxes_field[No]" value="No" class="form-checkbox">
+                    <label for="edit-checkboxes-field-no" class="option">No</label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="js-form-item form-item js-form-type-select form-type-select js-form-item-select-field form-item-select-field">
+        <label for="edit-select-field">Select field</label>
+        <select data-drupal-selector="edit-select-field" id="edit-select-field" name="select_field" class="form-select"><option value="" selected="selected">- None -</option><option value="Male">Male</option><option value="Female">Female</option></select>
+    </div>
+
+    <fieldset data-drupal-selector="edit-radios-field" id="edit-radios-field--wrapper" class="radios--wrapper fieldgroup form-composite webform-composite-visible-title js-webform-type-radios webform-type-radios js-form-item form-item js-form-wrapper form-wrapper">
+        <legend>
+            <span class="fieldset-legend">Radios field</span>
+        </legend>
+        <div class="fieldset-wrapper">
+            <div id="edit-radios-field" class="js-webform-radios webform-options-display-one-column form-radios">
+                <div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-radios-field form-item-radios-field">
+                    <input data-drupal-selector="edit-radios-field-yes" type="radio" id="edit-radios-field-yes" name="radios_field" value="Yes" class="form-radio">
+                    <label for="edit-radios-field-yes" class="option">Yes</label>
+                </div>
+                <div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-radios-field form-item-radios-field">
+                    <input data-drupal-selector="edit-radios-field-no" type="radio" id="edit-radios-field-no" name="radios_field" value="No" class="form-radio">
+                    <label for="edit-radios-field-no" class="option">No</label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+
+    <div data-drupal-selector="edit-actions" class="form-actions webform-actions js-form-wrapper form-wrapper" id="edit-actions">
+        <input class="webform-button--submit button button--primary js-form-submit form-submit" data-drupal-selector="edit-actions-submit" type="submit" id="edit-actions-submit" name="op" value="Send message">
+    </div>
+
+    <input autocomplete="off" data-drupal-selector="form-lvsqo-img3r9n3taqinhoyeezzcrc8hdrf3x38hxo-m" type="hidden" name="form_build_id" value="form-LVsQO-iMG3R9n3taqINhOYeezzcrc8HDrF3X38HxO-M">
+    <input data-drupal-selector="edit-webform-submission-contact-node-6-add-form" type="hidden" name="form_id" value="webform_submission_contact_node_6_add_form">
+</form>

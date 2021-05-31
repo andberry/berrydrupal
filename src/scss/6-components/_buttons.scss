@@ -1,0 +1,131 @@
+@mixin button-commons() {
+    display: inline-block;
+    padding: remCalc(16) remCalc(22) remCalc(14) remCalc(22);
+    border-radius: $border_radius;
+    text-decoration: none;
+    transition: $trans_linear;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+    font-size: 1rem;
+    border: none;
+    width: 100%;
+
+    @include mq(md) {
+        width: auto;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+
+
+/*
+  Standard/filled buttons
+*/
+.c-button {
+    @include button-commons();
+    background: $color_blue_royal;
+    color: $color_blue_light;
+
+    &:hover {
+        background: lighten($color_blue_royal, 5%);
+    }
+}
+
+.c-button--light {
+    @include button-commons();
+    background: $color_blue_light;
+    color: $color_blue_royal;
+
+    &:hover {
+        background: darken($color_blue_light, 5%);
+    }
+}
+
+
+
+/*
+    Callout link
+*/
+.c-callout-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 700;
+    position: relative;
+
+    line-height: 1;
+    color: $color_blue_royal;
+    transition: $trans_linear_fast;
+    padding: 5px 21px 3px 0px;
+
+    &:after {
+        display: block;
+        /*
+        position: absolute;
+        top: 4px;
+        */
+        @include abs-vertical-center();
+        right: 3px;
+        font-family: $font_family_icons;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1;
+        content: fa-content($fa-var-chevron-right);
+        transition: $trans_easeOutCubic_fast;
+        color: $color_blue_royal;
+        font-size: 1rem;
+    }
+
+    &:hover {
+        color: $color_green;
+        transition: $trans_linear;
+
+        &:after {
+            color: $color_green;
+            transition: $trans_easeOutCubic_fast;
+            transform: translateY(-50%) translateX(3px);
+        }
+    }
+}
+
+
+
+.c-button-icon {
+    @extend .c-button;
+    padding-right: $space_3xl;
+    position: relative;
+
+    .button__icon {
+        position: absolute;
+        display: block;
+        top: 0px;
+        right: -1px;
+        height: 46px;
+        width: 46px;
+        z-index: 100;
+        border-radius: $border_radius;
+        overflow: hidden;
+        background: $color_blue_sky;
+        transition: $trans_easeOutCubic_fast;
+    }
+
+    i {
+        @include abs-center();
+        transition: $trans_easeOutCubic_fast;
+        transition-delay: 50ms;
+    }
+
+    &:hover {
+        .button__icon {
+            transform: translateX(5px);
+        }
+
+        i {
+            transform: translateX(-30%) translateY(-50%);
+        }
+    }
+}

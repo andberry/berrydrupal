@@ -1,0 +1,97 @@
+.c-header {
+    position: relative;
+    background: $color_black;
+    color: $color_white;
+    @include py($space_s);
+
+    .site-logo {
+        display: block;
+        width: 150px;
+    }
+}
+
+
+
+/*
+    Header top
+*/
+.c-header-top {
+    .container {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    /* Header top menu */
+    .block-menu >  ul.menu {
+        @include menu-base-h();
+
+        & > li {
+            @include py(0);
+
+            & > a {
+                padding: $space_2xs $space_m;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: remCalc(14);
+                font-weight: 500;
+                line-height: 1;
+                color: $color_white;
+
+                &:hover {
+                    color: $color_green;
+                }
+            }
+
+            &:last-child {
+                a {
+                    padding-right: 0px;
+                }
+            }
+        }
+    }
+}
+
+
+
+/*
+    Header main
+*/
+.c-header-main {
+    background: $color_black;
+    padding-top: $space_s;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    /* Header main menu */
+    .block-menu > ul.menu {
+        @include menu-base-h();
+
+        & > li {
+            @include py(0);
+
+            & > a {
+                padding: $space_2xs $space_m;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: remCalc(14);
+                font-weight: 500;
+                line-height: 1;
+                color: $color_white;
+
+                &:hover {
+                    color: $color_green;
+                }
+            }
+
+            &:last-child {
+                a {
+                    padding-right: 0px;
+                }
+            }
+        }
+    }
+}

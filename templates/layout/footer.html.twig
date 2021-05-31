@@ -1,0 +1,23 @@
+<footer id="page-footer" role="contentinfo" class="c-footer">
+    {% if page.footer_top %}
+        <div class="c-footer-top">
+            {{ page.footer_top }}
+        </div>
+    {% endif %}
+
+    {% if page.footer_main %}
+        <div class="c-footer-main">
+            <div class="container">
+                {{ page.footer_main }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if page.footer_bottom %}
+        <div class="c-footer-bottom">
+            <div class="container">
+                {{ page.footer_bottom }}
+            </div>
+        </div>
+    {% endif %}
+</footer>

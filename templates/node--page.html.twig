@@ -90,7 +90,11 @@
     </div>
 
     <div class="field__gallery">
-        {# cycle drupal field values UI component data array #}
+        {#
+            Print c-gallery UI component
+            using a field image
+            and an optional text fields for title
+        #}
         {% set cdata = [] %}
         {% for item in node.field_gallery %}
             {% set cdata = cdata|merge([
@@ -103,13 +107,16 @@
         {% endfor %}
 
         {% include '@berry/components/c-gallery.html.twig' with {
-            'title_tag': content.field_heading_type,
             'title': content.field_title,
             'items': cdata
         }%}
     </div>
 
     <div class="field__text-image">
+        {#
+            Print c-textimage UI component
+            using 3 separate fields
+        #}
         {% include '@berry/components/c-textimage.html.twig' with {
             'title_tag': 'h5',
             'title': content.field_text_image_title,
@@ -117,6 +124,14 @@
             'image': content.field_text_image_image.0
         }%}
     </div>
+
+    <div class="field__link">
+        {#
+            Print a custom link markup from a Link field type
+        #}
+        <a href="{{ content.field_link.0['#url'] }}" class="c-button">{{ content.field_link.0['#title'] }}</a>
+    </div>
+
   </div>
 
 </article>

@@ -6,7 +6,7 @@
 {% for item in paragraph.field_gallery %}
     {% set items = items|merge([
         {
-            'image_src': item|file_uri|image_style('medium'),
+            'image_src': item|file_uri|image_style('crop_gallery'),
             'image_alt': item.alt,
             'link': item|file_uri|image_style('wide')
         }

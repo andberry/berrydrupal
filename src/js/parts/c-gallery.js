@@ -5,7 +5,6 @@ import 'lightgallery.js';
 import 'lg-fullscreen.js';
 
 const galleryItems = document.querySelectorAll('.js-gallery');
-console.log(galleryItems);
 
 for (let item of Array.from(galleryItems)) {
     lightGallery(item, {

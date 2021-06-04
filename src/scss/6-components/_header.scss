@@ -1,12 +1,16 @@
 .c-header {
     position: relative;
-    background: $color_black;
-    color: $color_white;
+    background: $color_white;
+    color: $color_black;
     @include py($space_s);
 
     .site-logo {
         display: block;
-        width: 150px;
+
+        img {
+            height: 75px;
+            width: auto;
+        }
     }
 }
 
@@ -35,7 +39,7 @@
                 font-size: remCalc(14);
                 font-weight: 500;
                 line-height: 1;
-                color: $color_white;
+                color: $color_black;
 
                 &:hover {
                     color: $color_green;
@@ -57,7 +61,7 @@
     Header main
 */
 .c-header-main {
-    background: $color_black;
+    background: $color_white;
     padding-top: $space_s;
 
     .container {
@@ -80,7 +84,7 @@
                 font-size: remCalc(14);
                 font-weight: 500;
                 line-height: 1;
-                color: $color_white;
+                color: $color_black;
 
                 &:hover {
                     color: $color_green;

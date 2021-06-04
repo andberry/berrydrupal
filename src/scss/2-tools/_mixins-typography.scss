@@ -4,17 +4,18 @@
 @mixin ts-base() {
     font-family: $font_family_1;
     @include responsive-property("font-size", $font_size_base);
-    font-weight: 400;
-    color: $color_black;
+    font-weight: 300;
     line-height: 1.5;
 }
 
 @mixin ts-headlines-commons {
     font-family: $font_family_2;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.1;
     margin-bottom: remCalc(8);
     margin-top: remCalc(42);
+    color: $color_black;
+    letter-spacing: 0.5px;
 
     &:first-child {
         margin-top: 0px;

@@ -24,6 +24,7 @@
 
 .c-hero__title {
     @include fs2();
+    color: $color_white;
 }
 
 .c-hero__content {

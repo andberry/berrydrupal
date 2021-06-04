@@ -1,0 +1,23 @@
+/*
+    Basic page
+*/
+body.page-node-type-page {
+    #main-content {
+        padding-bottom: $space_2xl;
+
+        @include mq(xl) {
+            padding-bottom: $space_3xl;
+        }
+    }
+}
+
+
+
+/*
+    Flexible page
+*/
+/*
+body.page-node-type-flexible-page {
+
+}
+*/

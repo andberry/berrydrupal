@@ -44,7 +44,8 @@ function berry_theme_suggestions_field_alter(&$suggestions, &$variables) {
 
     $content_only_fields_multiple = array(
         'field_flexible_page_contents',
-        'field_cards'
+        'field_cards',
+        'field_file',
     );
 
     if (in_array($variables['element']['#field_name'], $content_only_fields_multiple)) {

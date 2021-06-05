@@ -10,6 +10,8 @@ libraries:
 stylesheets-remove:
   - core/themes/classy/css/components/menu.css
   - core/themes/classy/css/components/form.css
+  # comment out or remove line below to restore files icons on file fields
+  - core/themes/classy/css/components/file.css
   - core/themes/stable/css/system/components/fieldgroup.module.css
   - core/themes/stable/css/core/assets/vendor/normalize-css/normalize.css
   - core/themes/stable/css/core/normalize-fixes.css

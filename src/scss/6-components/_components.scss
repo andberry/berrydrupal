@@ -19,7 +19,11 @@
 @import './font-awesome/regular';
 @import './font-awesome/brands';
 
+/* for gallery lightbox */
 @import 'lightgallery.js/src/sass/lightgallery';
+
+/* for carousel/slideshow */
+@import 'swiper/swiper-bundle';
 
 
 
@@ -40,5 +44,6 @@
 @import 'c-hero';
 @import 'c-simpletext';
 @import 'c-gallery';
+@import 'c-carousel';
 @import 'c-textimage';
 @import 'c-card';

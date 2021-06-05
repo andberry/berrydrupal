@@ -1,7 +1,10 @@
 import './parts/c-gallery.js';
+import './parts/c-carousel.js';
 import './parts/vimeo-in-lightbox.js';
 import './parts/mobileMenuToggle.js';
 import './parts/c-header-top-bar.js';
+
+// import './parts/scrollLinks.js';
 
 /*
 import './parts/slideshow.js';

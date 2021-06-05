@@ -1,0 +1,62 @@
+/*
+    Pagination
+*/
+.swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include py($space_s);
+}
+
+.swiper-pagination-bullet{
+    outline: none;
+    opacity: 0.5;
+    background: $color_primary;
+    padding: 2px;
+    width: 10px;
+    height: 10px;
+    @include mx($space_2xs);
+
+    &:hover{
+        opacity: 1;
+    }
+}
+
+.swiper-pagination-bullet-active{
+    opacity: 1;
+}
+
+
+
+/*
+    Navigation: arrows
+*/
+.swiper-button-prev,
+.swiper-button-next{
+    outline: none;
+    width: 30px;
+    height: 40px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $trans_linear_fast;
+
+    @include mq($until: lg) {
+        display: none;
+    }
+
+    &:after{
+        display: block;
+        font-size: remCalc(24);
+        color: $color_primary;
+    }
+
+    &:hover{
+        background: rgba($color_black0, 0.25);
+    }
+
+    &.swiper-button-disabled {
+        opacity: 0.1;
+    }
+}

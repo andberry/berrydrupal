@@ -1,0 +1,32 @@
+{% set title_tag = (title_tag is not defined) ? 'h2' : title_tag %}
+
+<section class="c-carousel has-{{items|length}}-images">
+    {% if title %}
+        <div class="c-carousel__intro container">
+            <{{title_tag}} class="c-carousel__title">
+                {{ title }}
+            </{{title_tag}}>
+        </div>
+    {% endif %}
+
+    <div class="c-carousel__items container js-carousel js-gallery">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for item in items %}
+                    <div class="swiper-slide c-carousel__item c-carousel__item--{{ loop.index }}">
+                        {# <img src="{{ item.image_src }}" alt="{{ item.image_alt }}" class="c-carousel__img"> #}
+                        <a href="{{ item.link }}" class="c-carousel__link">
+                            <img src="{{ item.image_src }}" alt="{{ item.image_alt }}" class="c-carousel__img">
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+
+</section>

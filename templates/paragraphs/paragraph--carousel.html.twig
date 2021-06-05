@@ -1,0 +1,20 @@
+{#
+    using paragraph.field and not content.field to access raw data,
+    'file_uri' and 'image_style' filters provided by twig_tweak module
+#}
+{% set items = [] %}
+{% for item in paragraph.field_gallery %}
+    {% set items = items|merge([
+        {
+            'image_src': item|file_uri|image_style('crop_gallery'),
+            'image_alt': item.alt,
+            'link': item|file_uri|image_style('wide')
+        }
+    ]) %}
+{% endfor %}
+
+{% include '@berry/components/c-carousel.html.twig' with {
+    'title_tag': content.field_heading_type,
+    'title': content.field_title,
+    'items': items
+}%}

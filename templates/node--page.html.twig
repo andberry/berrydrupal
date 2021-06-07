@@ -85,24 +85,19 @@
   <h1 class="node__title">{{ label }}</h1>
 
   <div{{ content_attributes.addClass('node__content') }}>
+
+    {# Print a simple text field (plain or long/html) #}
     <div class="field__content">
-        {#
-            Print a simple text field (plain or long/html)
-        #}
         {{ content.field_content }}
     </div>
 
+    {# Print a c-gallery component with single fields on node #}
     <div class="field__gallery">
-        {#
-            Print c-gallery UI component
-            using a field image
-            and an optional text fields for title
-        #}
         {% set cdata = [] %}
         {% for item in node.field_gallery %}
             {% set cdata = cdata|merge([
                 {
-                    'image_src': item|file_uri|image_style('medium'),
+                    'image_src': item|file_uri|image_style('crop_gallery'),
                     'image_alt': item.alt,
                     'link': item|file_uri|image_style('wide')
                 }
@@ -115,11 +110,13 @@
         }%}
     </div>
 
+    {# Print c-gallery component using paragraph #}
+    <div class="field__paragraph-gallery">
+        {{ content.field_paragraph_gallery }}
+    </div>
+
+    {# Print c-textimage component using fields on node #}
     <div class="field__text-image">
-        {#
-            Print c-textimage UI component
-            using 3 separate fields
-        #}
         {% include '@berry/components/c-textimage.html.twig' with {
             'title_tag': 'h5',
             'title': content.field_text_image_title,
@@ -128,35 +125,23 @@
         }%}
     </div>
 
+    {#
+        Print Link field with custom markup (use "Link" as field formatter and NOT "separate link and text")
+    #}
     <div class="field__link">
-        {#
-            Print a custom link markup from a Link field type
-            use "Link" as field formatter and NOT "separate link and text"
-        #}
         <a href="{{ content.field_link.0['#url'] }}" class="c-button">{{ content.field_link.0['#title'] }}</a>
     </div>
 
+    {# Print File field with custom markup (handle with and without description) #}
     <div class="field__file">
-        {#
-            Print simple file field, with no customization
-        #}
-        <p>
-            basic file file display:
-            <br>
-            {{ content.field_file }}
-        </p>
+        {% set file_url = file_url(node.field_file.0.entity.uri.value) %}
+        {% set file_desc = (node.field_file.0.description) ? node.field_file.0.description : node.field_file.0.entity.filename.value %}
+        <a href="{{ file_url }}" class="c-button--light">{{ file_desc }}</a>
+    </div>
 
-        {#
-            Print a custom file field markup from a File field type
-            handle with and without description
-        #}
-        <p>
-            custom file display:
-            <br>
-            {% set file_url = file_url(node.field_file.0.entity.uri.value) %}
-            {% set file_desc = (node.field_file.0.description) ? node.field_file.0.description : node.field_file.0.entity.filename.value %}
-            <a href="{{ file_url }}" class="c-button--light">{{ file_desc }}</a>
-        </p>
+    {# Carousel using paragraph #}
+    <div class="field__carousel">
+        {{ content.field_paragraph_carousel }}
     </div>
 
   </div>

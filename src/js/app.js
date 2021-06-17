@@ -4,6 +4,17 @@ import './parts/vimeo-in-lightbox.js';
 import './parts/mobileMenuToggle.js';
 import './parts/c-header-top-bar.js';
 
+import $ from "jquery";
+import Foundation from 'foundation-sites';
+$(".block-menu.menu--main > .menu")
+    .addClass('vertical medium-horizontal menu')
+    .data("responsive-menu", "accordion medium-dropdown");
+const responsiveMenu = new Foundation.ResponsiveMenu(
+    $(".block-menu.menu--main > .menu"),
+    {}
+);
+console.log(responsiveMenu);
+
 // import './parts/scrollLinks.js';
 
 /*

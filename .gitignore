@@ -1,6 +1,5 @@
 node_modules/
 **/.DS_Store
-css
-images
+/css
+/images
 /js
-backstop_data/

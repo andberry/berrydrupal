@@ -1,7 +1,7 @@
 {
-  "name": "berry1",
+  "name": "berrydrupal",
   "version": "1.0.0",
-  "description": "Berry test 1",
+  "description": "Component-based Drupal 8/9 theme implemented with Sass/ITCSS, Javascript ES6+, gulp, rollup",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

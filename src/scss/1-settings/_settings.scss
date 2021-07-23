@@ -46,7 +46,7 @@ $container_additional_padding: remCalc(0);
 */
 $grid_cols: 12;
 $grid_col_gap: 30px;
-$grid_row_gap: 30px;
+$grid_row_gap: 0px;
 $max-column-width: ($container_fluid_max_width - ($container_additional_padding_px * 2) - ($grid_col_gap * 11)) / 12;
 
 

@@ -25,8 +25,22 @@
 /* for carousel/slideshow */
 @import 'swiper/swiper-bundle';
 
-/* foundation sites for responsive navigation */
-@import 'foundation-sites/dist/css/foundation';
+
+
+/*
+    Foundation sites for responsive navigation
+*/
+// @import 'foundation-sites/dist/css/foundation';
+
+
+
+/*
+    UIkit components
+*/
+@import "uikit/src/scss/components/visibility";
+@import "uikit/src/scss/components/accordion";
+@import "uikit/src/scss/components/animation";
+
 
 
 /*

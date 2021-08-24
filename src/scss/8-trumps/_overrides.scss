@@ -20,3 +20,12 @@ nav li:before {
         left: 5px;
     }
 }
+
+
+
+/*
+    UIkit
+*/
+[class*='uk-animation-'] {
+    animation-timing-function: $trans_func_easeOutCubic;
+}

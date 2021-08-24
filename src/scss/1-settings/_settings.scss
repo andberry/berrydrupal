@@ -62,7 +62,10 @@ $space_l: 1.5rem;
 $space_xl: 2rem;
 $space_2xl: 3rem;
 $space_3xl: 4rem;
+$space_35xl: 6rem;
 $space_4xl: 8rem;
+$space_5xl: 12rem;
+$space_6xl: 16rem;
 
 /* sass map useful to generate classes (_spacing-classes.scss) */
 $spacings: (
@@ -234,3 +237,12 @@ $lg-path-fonts: '../fonts/lg' !default;
 $lg-path-images: '../images/lg' !default;
 $zindex-outer: 20000000;
 $zindex-backdrop: 20000000;
+
+
+
+/*
+    UIkit variables
+*/
+@import "uikit/src/scss/variables";
+@import "uikit/src/scss/mixins";
+// @import "uikit/src/scss/uikit";

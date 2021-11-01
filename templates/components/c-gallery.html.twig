@@ -2,14 +2,14 @@
 
 <section class="c-gallery has-{{items|length}}-images">
     {% if title %}
-        <div class="c-gallery__intro container">
+        <div class="c-gallery__intro l-container">
             <{{title_tag}} class="c-gallery__title">
                 {{ title }}
             </{{title_tag}}>
         </div>
     {% endif %}
 
-    <div class="c-gallery__items container grid js-lightbox">
+    <div class="c-gallery__items l-container l-grid js-lightbox">
         {% for item in items %}
         <div class="c-gallery__item c-gallery__item--{{ loop.index }}">
             <a href="{{ item.link }}" class="c-gallery__link">

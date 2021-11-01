@@ -2,14 +2,14 @@
 
 <section class="c-carousel has-{{items|length}}-images">
     {% if title %}
-        <div class="c-carousel__intro container">
+        <div class="c-carousel__intro l-container">
             <{{title_tag}} class="c-carousel__title">
                 {{ title }}
             </{{title_tag}}>
         </div>
     {% endif %}
 
-    <div class="c-carousel__items container js-carousel js-lightbox">
+    <div class="c-carousel__items l-container js-carousel js-lightbox">
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 {% for item in items %}

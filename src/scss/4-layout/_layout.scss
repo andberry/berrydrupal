@@ -1,0 +1,79 @@
+/*
+    Layout (Objects)
+
+    Cosmetic-free and reusable design patterns,
+    only define layout and positioning:
+    containers, grid, column, cards-list
+
+    First layer of class-based selector
+
+    Use only abstract/agnostic class names (eg. .cards-list)
+*/
+
+// @import 'flex-grid'; // deprecated: use CSS Grid FTW
+@import 'container';
+@import 'grid';
+// @import 'layout_debug';
+
+
+
+/*
+    Sidebar layouts with grid
+*/
+.l-sidebar-left {
+    .l-main {
+        @include grid-cell-span(2);
+
+        @include mq(md) {
+            @include grid-cell-span(8, 5);
+            order: 2;
+        }
+    }
+
+    .l-sidebar {
+        @include grid-cell-span(2);
+        margin-top: $space_2xl;
+
+        @include mq(md) {
+            @include grid-cell-span(4, 1);
+            margin-top: 0px;
+            order: 1;
+        }
+    }
+}
+
+.l-sidebar-right {
+    .l-main {
+        @include grid-cell-span(2);
+
+        @include mq(md) {
+            @include grid-cell-span(12);
+        }
+        
+        @include mq(lg) {
+            @include grid-cell-span(7, 1);
+            padding-right: $space_xl;
+        }
+    }
+
+    .l-sidebar {
+        @include grid-cell-span(2);
+        margin-top: $space_2xl;
+
+        @include mq(md) {
+            @include grid-cell-span(12);
+        }
+
+        @include mq(lg) {
+            @include grid-cell-span(5, 8);
+            margin-top: 0px;
+        }
+    }
+}
+
+.l-sidebar__inner--sticky {
+    @include mq(md) {
+        position: sticky;
+        top: 30px;
+    }
+}

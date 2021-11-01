@@ -1,0 +1,13 @@
+.l-container,
+.l-container-fluid {
+    border: thin solid indigo;
+}
+
+.l-grid {
+    border: thin solid $color_secondary;
+    padding: $space_l;
+}
+
+.l-cell {
+    border: thin solid $color_secondary;
+}

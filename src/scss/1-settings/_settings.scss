@@ -13,11 +13,12 @@ $mq-breakpoints: (
     md: 768px,
     lg: 1024px,
     xl: 1200px,
-    xxl: 1440px
+    xxl: 1440px,
+    xxxl: 1600px
 );
 
 // viewport/breakpoint debug: comment out in production
-$mq-show-breakpoints: (md, lg, xl, xxl);
+// $mq-show-breakpoints: (md, lg, xl, xxl);
 
 
 
@@ -46,14 +47,15 @@ $container_additional_padding: remCalc(0);
 */
 $grid_cols: 12;
 $grid_col_gap: 30px;
-$grid_row_gap: 0px;
-$max-column-width: ($container_fluid_max_width - ($container_additional_padding_px * 2) - ($grid_col_gap * 11)) / 12;
+$grid_row_gap: 30px;
+$max-column-width: math.div(($container_fluid_max_width - ($container_additional_padding_px * 2) - ($grid_col_gap * 11)), 12);
 
 
 
 /*
     Spacings/sizes
 */
+$space_3xs: 0.12rem;
 $space_2xs: 0.25rem;
 $space_xs: 0.5rem;
 $space_s: 0.75rem;
@@ -64,7 +66,9 @@ $space_2xl: 3rem;
 $space_3xl: 4rem;
 $space_35xl: 6rem;
 $space_4xl: 8rem;
+$space_45xl: 10rem;
 $space_5xl: 12rem;
+$space_55xl: 14rem;
 $space_6xl: 16rem;
 
 /* sass map useful to generate classes (_spacing-classes.scss) */
@@ -81,66 +85,50 @@ $spacings: (
 );
 
 /* forms */
-$form-input_heigh: 45px;
+$form-input_height: 48px;
+
+/* buttons */
+$button_height: 48px;
 
 
 
 /*
     Colors
 */
-$color_white: #FFF;
+$color_white: #fff;
 $color_black: #333;
 $color_black0: #000;
-$color_grey: #ECECEC;
-$color_grey2: #D8D8D8;
-$color_grey-dark: #34393F;
-$color_blue-sky: #87BAE5;
-$color_blue-sky2: #B5CEE4;
-$color_blue-royal: #005689;
-$color_blue-dark: #003555;
-$color_blue-light: #E7EFFA;
-$color_green: #85BE60;
 
-$color_primary: $color_blue_royal;
+$color_grey: #CCC;
+$color_green: #09925b;
+$color_blue: #2f406e;
+
+$color_primary: $color_blue;
 $color_secondary: $color_green;
+$color_text: $color_black;
+
+
 
 /* sass map useful to generate classes */
 $colors: (
     "white": $color_white,
     "black": $color_black,
     "black0": $color_black0,
-    "grey-dark": $color_grey-dark,
-    "blue-sky": $color_blue-sky,
-    "blue-sky2": $color_blue-sky2,
-    "blue-royal": $color_blue-royal,
-    "blue-dark": $color_blue-dark,
-    "blue-light": $color_blue-light,
-    "green": $color_green,
     "grey": $color_grey,
-    "grey2": $color_grey2
+    "blue": $color_blue,
+    "green": $color_green
 );
+
 
 
 
 /*
     Typography
 */
-/*
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap');
 $font_family_1: 'Open Sans', sans-serif;
 $font_family_2: 'Lato', sans-serif;
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&family=Oxygen:wght@300;400;700&display=swap');
-$font_family_1: 'Fira Sans', sans-serif;
-$font_family_2: 'Oxygen', sans-serif;
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@300;400;600;700&display=swap');
-$font_family_1: 'Poppins', sans-serif;
-$font_family_2: 'Lora', serif;
-
-$font_family_icons: 'Font Awesome 5 Free';
-$fa-font-path: '../fonts/font-awesome';
 
 
 /*
@@ -148,42 +136,38 @@ $fa-font-path: '../fonts/font-awesome';
     (to be used with responsive-property mixin)
 */
 $font_size_base: (
-    sm: remCalc(18)
+    sm: remCalc(16),
+    lg: remCalc(18)
 );
 
 $font_size_1: (
-    sm: remCalc(32),
+    sm: remCalc(36),
     lg: remCalc(44)
 );
 
 $font_size_2: (
-    sm: remCalc(26),
-    lg: remCalc(34)
+    sm: remCalc(30),
+    lg: remCalc(36)
 );
 
 $font_size_3: (
     sm: remCalc(24),
-    lg: remCalc(26)
+    lg: remCalc(30)
 );
 
 $font_size_4: (
-    sm: remCalc(20),
+    sm: remCalc(22),
     lg: remCalc(24)
 );
 
 $font_size_5: (
     sm: remCalc(18),
-    lg: remCalc(20)
+    lg: remCalc(22)
 );
 
 $font_size_6: (
     sm: remCalc(16),
     lg: remCalc(18)
-);
-
-$font_size_subhead: (
-    sm: remCalc(20),
-    lg: remCalc(22)
 );
 
 /*
@@ -208,18 +192,24 @@ $trans_linear_fast: all 100ms linear;
 $trans_easeInOutCubic: all 450ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
 $trans_easeOutCubic: all 450ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
 $trans_easeOutCubic_fast: all 250ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
-$trans_easeOutCubic_slow: all 800ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$trans_easeOutCubic_slow: all 600ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$trans_easeOutBack: all 250ms cubic-bezier(.29,1.59,.61,1.35);
+
 $trans_func_easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1.000);
 $trans_func_easeOutCubic: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+
 
 
 
 /*
   Various
 */
-$border_radius: 0px;
+$border_radius: 24px;
+$border_radius_small: 4px;
+$border_radius_small2: 8px;
 $slashy_degs: 120deg;
-$box_shadow: 0px 4px 4px 2px rgba(0,0,0,0.1);
+$box_shadow: 0px 2px 4px 2px rgba(0,0,0,0.1);
+$box_shadow_2: 0px 2px 4px 2px rgba(0,0,0,0.3);
 
 
 
@@ -243,6 +233,15 @@ $zindex-backdrop: 20000000;
 /*
     UIkit variables
 */
+$animation-duration: 0.3s;
+$animation-fade-duration: 0.8s !default;
+$animation-stroke-duration: 2s !default;
+$animation-kenburns-duration: 6s !default;
+$animation-fast-duration: 0.1s !default;
+$animation-slide-small-translate: 15px;
+$animation-slide-medium-translate: 50px !default;
+/*
 @import "uikit/src/scss/variables";
 @import "uikit/src/scss/mixins";
-// @import "uikit/src/scss/uikit";
+@import "uikit/src/scss/uikit";
+*/

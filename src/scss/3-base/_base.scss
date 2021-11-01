@@ -17,7 +17,7 @@
 /* Type selector style */
 body {
     background: $color_white;
-    color: $color_black;
+    color: $color_text;
     @include ts-base();
 }
 
@@ -70,10 +70,13 @@ img {
 }
 
 a {
-    color: $color_blue_royal;
-    font-weight: 700;
+    color: $color_primary;
     text-decoration: underline;
     transition: $trans_linear_fast;
+
+    &:hover {
+        color: $color_secondary;
+    }
 }
 
 button {
@@ -97,7 +100,7 @@ ul {
 
 ::selection {
     color: $color_white;
-    background: $color_blue_royal;
+    background: $color_primary;
 }
 
 
@@ -105,46 +108,92 @@ ul {
     Details element
 */
 details {
-    border: none;
-    border-bottom: thin solid darken($color_grey, 15%);
-    padding: 0px;
-    margin: 0px;
+    text-align: left;
+    display: block;
+    margin: $space_m 0px;
+    background: $color_white;
+    text-decoration: none;
+    border-radius: $border_radius_small;
+    box-shadow: $box_shadow;
+    color: $color_primary;
+    font-weight: 500;
+    position: relative;
 
-    summary{
-        padding: 0px;
-        padding-top: $space_m;
-        padding-bottom: $space_s;
+    summary {
+        padding: $space_l $space_xl;
+        cursor: pointer;
+        color: $color_blue;
         list-style: none;
-        position: relative;
+        font-family: $font_family_2;
+        @include fs4();
         transition: $trans_linear_fast;
 
-        &:after {
-            display: block;
-            content: '+';
-            position: absolute;
-            top: 14px;
-            right: 0px;
-            line-height: 1;
-            font-size: 22px;
-            font-weight: 300;
+        &::marker {
+            display: none;
         }
 
-        &:focus {
-            outline: none;
+        &:after {
+            position: absolute;
+            top: $space_l;
+            right: $space_xl;
+            font-size: remCalc(32);
+            font-weight: 300;
+            line-height: 1;
+            color: $color_blue;
+            transition: $trans_easeOutCubic_fast;
         }
 
         &:hover {
-            color: $color_blue_royal;
-        }
-
-        &::-webkit-details-marker {
-            display: none;
+            color: $color_green;
+            &:after {
+                color: $color_green;
+            }
         }
     }
 
+
+
     &[open] {
-        summary:after {
-            content: '-';
+        box-shadow: $box_shadow_2;
+
+        summary {
+            color: $color_green;
         }
+    }
+}
+
+.detail__content {
+    padding: 0px $space_xl $space_l $space_xl;
+    a {
+        color: $color_blue;
+        text-decoration: none;
+        display: inline-block;
+        @include py($space_xs);
+        font-weight: 500;
+
+        &:hover {
+            color: $color_green;
+        }
+    }
+}
+
+
+
+table {
+    text-align: left;
+    table-layout: fixed;
+
+    tbody {
+        border-top: thin solid darken($color_grey, 8%);
+        border-bottom: thin solid darken($color_grey, 8%);
+        tr:nth-child(odd) {
+            background: $color_grey;
+        }
+    }
+
+    td,
+    th {
+        padding: $space_s $space_m;
+        vertical-align: top;
     }
 }

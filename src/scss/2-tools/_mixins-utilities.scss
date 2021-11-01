@@ -84,7 +84,7 @@
 
     img {
         transform: scale(1);
-        transition: $trans_easeOutCubic;
+        transition: $trans_easeOutCubic_fast;
         backface-visibility: hidden;
     }
 

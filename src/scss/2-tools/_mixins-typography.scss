@@ -4,30 +4,25 @@
 @mixin ts-base() {
     font-family: $font_family_1;
     @include responsive-property("font-size", $font_size_base);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.5;
 }
 
 @mixin ts-headlines-commons {
     font-family: $font_family_2;
-    font-weight: 600;
-    line-height: 1.1;
-    margin-bottom: remCalc(8);
-    margin-top: remCalc(42);
-    color: $color_black;
-    letter-spacing: 0.5px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: $space_xs;
+    margin-top: $space_xl;
+
+    @include mq(lg) {
+        margin-bottom: $space_s;
+        margin-top: $space_3xl;
+    }
 
     &:first-child {
         margin-top: 0px;
     }
-}
-
-@mixin ts-subhead() {
-    font-family: $font_family_2;
-    @include responsive-property("font-size", $font_size_subhead);
-    font-weight: 700;
-    line-height: 1.1;
-    margin-top: 0px;
 }
 
 

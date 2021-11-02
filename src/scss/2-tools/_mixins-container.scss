@@ -10,13 +10,9 @@
     padding-left: $grid_col_gap;
     padding-right: $grid_col_gap;
 
-    @include mq(xl) {
+    @include mq(lg) {
         padding-left: math.div($grid_col_gap, 2);
         padding-right: math.div($grid_col_gap, 2);
-    }
-
-    .l-container {
-        @include px(0);
     }
 }
 

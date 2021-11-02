@@ -42,6 +42,8 @@
     }
 }
 
+
+
 .l-sidebar-right {
     .l-main {
         @include grid-cell-span(2);
@@ -49,7 +51,7 @@
         @include mq(md) {
             @include grid-cell-span(12);
         }
-        
+
         @include mq(lg) {
             @include grid-cell-span(7, 1);
             padding-right: $space_xl;
@@ -71,6 +73,10 @@
     }
 }
 
+
+/*
+    Sticky sidebar inside a sidebar layout?
+*/
 .l-sidebar__inner--sticky {
     @include mq(md) {
         position: sticky;

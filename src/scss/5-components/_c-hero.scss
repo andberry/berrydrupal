@@ -15,7 +15,7 @@
 .c-hero__overlay {
     @include abs-fill();
     background: rgba($color_black0, 0.5);
-    z-index: 10;
+    z-index: $zindex_10;
 }
 
 .c-hero__content__inner {
@@ -30,7 +30,7 @@
 .c-hero__content {
     width: 100%;
     position: relative;
-    z-index: 20;
+    z-index: $zindex_100;
     color: $color_white;
 }
 

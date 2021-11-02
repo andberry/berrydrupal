@@ -21,7 +21,7 @@
     .c-prefooter__block {
         @include py($space_m);
         position: relative;
-        z-index: 100;
+        z-index: $zindex_10;
         @include grid-cell-span(2);
 
         @include mq(md) {

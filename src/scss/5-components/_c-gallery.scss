@@ -31,7 +31,7 @@
             height: 100%;
             background: rgba($color_black0, 0);
             transition: $trans_linear_fast;
-            z-index: 10;
+            z-index: $zindex_10;
         }
 
         &:hover {

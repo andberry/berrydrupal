@@ -39,6 +39,7 @@
 
     @include mq(xxl) {
         grid-template-columns: 1fr repeat($cols_number, $max-column-width) 1fr;
+        overflow-x: hidden;
     }
 }
 

@@ -48,7 +48,7 @@ $container_additional_padding: remCalc(0);
 $grid_cols: 12;
 $grid_col_gap: 30px;
 $grid_row_gap: 30px;
-$max-column-width: math.div(($container_fluid_max_width - ($container_additional_padding_px * 2) - ($grid_col_gap * 11)), 12);
+$max-column-width: math.div(($container_fluid_max_width - $grid_col_gap - ($grid_col_gap * 11)), 12);
 
 
 

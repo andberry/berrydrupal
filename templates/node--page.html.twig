@@ -132,6 +132,22 @@
         <a href="{{ content.field_link.0['#url'] }}" class="c-button">{{ content.field_link.0['#title'] }}</a>
     </div>
 
+
+
+    {# Using link field multiple #}
+    {#
+    <div class="field__links">
+        {% for i in 0 .. node.field_links|length - 1 %}
+            {% set item = content.field_links[i] %}
+            <div class="field-links__item">
+                <a class="c-button" href="{{ item['#url'] }}">{{ item['#title'] }}</a>
+            </div>
+        {% endfor %}
+    </div>
+    #}
+
+
+
     {# Print File field with custom markup (handle with and without description) #}
     <div class="field__file">
         {% set file_url = file_url(node.field_file.0.entity.uri.value) %}

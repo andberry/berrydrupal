@@ -8,8 +8,8 @@
     .c-card {
         @include grid-cell(2, 4);
     }
-}
 
-.c-cards__title {
-    margin-bottom: $space_l;
+    &__title {
+        margin-bottom: $space_l;
+    }
 }

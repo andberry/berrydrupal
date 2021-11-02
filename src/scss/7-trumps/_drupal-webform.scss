@@ -103,7 +103,7 @@
     width: 100%;
     border-radius: $border_radius;
     padding: $space_s $space_m;
-    border: thin solid lighten($color_grey-dark, 40%);
+    border: thin solid lighten($color_grey, 40%);
     max-width: 100%;
     transition: $trans_linear_fast;
     font-size: 16px;
@@ -139,7 +139,7 @@
     // active number
     &.is-active {
         .progress-marker::before {
-            background: $color_blue_royal;
+            background: $color_primary;
         }
     }
 }
@@ -173,6 +173,6 @@
     }
 
     .webform-button--previous {
-        @extend .c-button--light;
+        @extend .c-button;
     }
 }

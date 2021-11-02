@@ -20,7 +20,7 @@
     Header top
 */
 .c-header-top {
-    .container {
+    .l-container {
         display: flex;
         justify-content: flex-end;
     }
@@ -42,7 +42,7 @@
                 color: $color_black;
 
                 &:hover {
-                    color: $color_green;
+                    color: $color_primary;
                 }
             }
 
@@ -64,7 +64,7 @@
     background: $color_white;
     padding-top: $space_s;
 
-    .container {
+    .l-container {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
@@ -87,7 +87,7 @@
                 color: $color_black;
 
                 &:hover {
-                    color: $color_green;
+                    color: $color_primary;
                 }
             }
 

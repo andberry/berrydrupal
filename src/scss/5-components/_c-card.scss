@@ -1,13 +1,16 @@
 .c-card {
-    border-radius: $border_radius;
     border: thin solid $color_grey;
-    overflow: hidden;
 }
 
 .c-card__link {
     display: block;
     text-decoration: none;
     @include scale-on-hover();
+    color: $color_text;
+
+    &:hover {
+        color: $color_primary;
+    }
 }
 
 .c-card__main {

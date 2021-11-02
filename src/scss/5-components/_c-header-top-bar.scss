@@ -4,7 +4,7 @@
     @include py($space_2xs);
     transition: $trans_easeOutCubic;
 
-    .container {
+    .l-container {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -51,7 +51,7 @@
 
     &:hover {
         i {
-            color: $color_blue_royal;
+            color: $color_primary;
         }
     }
 }

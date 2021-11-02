@@ -14,7 +14,7 @@ textarea {
     width: 100%;
     height: $form-input_height;
     line-height: 1;
-    border-radius: $border_radius;
+    border-radius: $border_radius_small;
     padding: 0px $space_l;
     border: thin solid darken($color_grey, 10%);
     max-width: 100%;
@@ -38,7 +38,7 @@ input[type="file"] {
 
 
 ::placeholder {
-    color: $color_blue;
+    color: $color_primary;
     opacity: 0.8;
     font-family: $font_family_1;
 }
@@ -63,7 +63,7 @@ select {
     max-width: 100%;
     width: 100%;
     font-size: 1rem;
-    color: rgba($color_blue, 0.8);
+    color: rgba($color_primary, 0.8);
 
     &:focus {
         outline: none;

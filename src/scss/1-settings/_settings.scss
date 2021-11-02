@@ -100,11 +100,13 @@ $color_black: #333;
 $color_black0: #000;
 
 $color_grey: #CCC;
-$color_green: #09925b;
-$color_blue: #2f406e;
+// $color_green: #09925b;
+// $color_blue: #2f406e;
+$color_violet:  #8700f1;
+$color_lime:  #b8f96a;
 
-$color_primary: $color_blue;
-$color_secondary: $color_green;
+$color_primary: $color_violet;
+$color_secondary: $color_lime;
 $color_text: $color_black;
 
 
@@ -115,8 +117,8 @@ $colors: (
     "black": $color_black,
     "black0": $color_black0,
     "grey": $color_grey,
-    "blue": $color_blue,
-    "green": $color_green
+    "violet": $color_violet,
+    "lime": $color_lime
 );
 
 
@@ -128,6 +130,7 @@ $colors: (
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap');
 $font_family_1: 'Open Sans', sans-serif;
 $font_family_2: 'Lato', sans-serif;
+$font_family_icons: 'Font Awesome Pro';
 
 
 
@@ -240,8 +243,5 @@ $animation-kenburns-duration: 6s !default;
 $animation-fast-duration: 0.1s !default;
 $animation-slide-small-translate: 15px;
 $animation-slide-medium-translate: 50px !default;
-/*
+
 @import "uikit/src/scss/variables";
-@import "uikit/src/scss/mixins";
-@import "uikit/src/scss/uikit";
-*/

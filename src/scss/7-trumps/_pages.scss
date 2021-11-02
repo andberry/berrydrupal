@@ -1,0 +1,66 @@
+/*
+    Login page/form
+*/
+body.path-user {
+    .region-content {
+        @include py($space_3xl);
+    }
+}
+
+.user-login-form {
+    max-width: 600px;
+
+    .description {
+        display: none;
+    }
+}
+
+
+
+/*
+    Search results page
+*/
+.path-search {
+    #main-content {
+        @include py($space_2xl);
+        @include mq(xl) {
+            @include py($space_3xl);
+        }
+    }
+
+    #search-form {
+        #edit-basic {
+            display: flex;
+        }
+
+        label {
+            display: none;
+        }
+
+        #edit-submit {
+            margin-left: $space_xs;
+        }
+    }
+
+    #edit-help-link {
+        display: none;
+    }
+
+    .search-results {
+        margin: 0px;
+        padding: 0px;
+
+        li {
+            margin: $space_2xl 0px;
+        }
+    }
+
+    /* remove 'node' from breadcrumbs if we are in search page */
+    .breadcrumb {
+        ol {
+            li:nth-child(3) {
+                display: none;
+            }
+        }
+    }
+}

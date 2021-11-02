@@ -122,7 +122,7 @@ details {
     summary {
         padding: $space_l $space_xl;
         cursor: pointer;
-        color: $color_blue;
+        color: $color_primary;
         list-style: none;
         font-family: $font_family_2;
         @include fs4();
@@ -139,14 +139,14 @@ details {
             font-size: remCalc(32);
             font-weight: 300;
             line-height: 1;
-            color: $color_blue;
+            color: $color_primary;
             transition: $trans_easeOutCubic_fast;
         }
 
         &:hover {
-            color: $color_green;
+            color: $color_secondary;
             &:after {
-                color: $color_green;
+                color: $color_secondary;
             }
         }
     }
@@ -157,7 +157,7 @@ details {
         box-shadow: $box_shadow_2;
 
         summary {
-            color: $color_green;
+            color: $color_secondary;
         }
     }
 }
@@ -165,14 +165,14 @@ details {
 .detail__content {
     padding: 0px $space_xl $space_l $space_xl;
     a {
-        color: $color_blue;
+        color: $color_primary;
         text-decoration: none;
         display: inline-block;
         @include py($space_xs);
         font-weight: 500;
 
         &:hover {
-            color: $color_green;
+            color: $color_secondary;
         }
     }
 }

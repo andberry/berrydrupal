@@ -4,33 +4,37 @@
     @include mq(lg) {
         @include py($space_3xl);
     }
-}
-
-.c-carousel__link {
-    @include scale-on-hover();
-}
 
 
-/*
-    Dots and Arrows position
-*/
-.js-carousel {
-    position: relative;
-}
-.swiper-pagination {
-    position: relative;
-}
 
-.swiper-button-prev,
-.swiper-button-next{
-    top: 100%;
-}
+    &__items {
+        position: relative;
+    }
 
-.swiper-button-prev{
-    right: 55px;
-    left: auto;
-}
 
-.swiper-button-next{
-    right: 15px;
+
+    &__link {
+        @include scale-on-hover();
+    }
+
+
+
+    /* Swiper.js additional style */
+    .swiper-pagination {
+        position: relative;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next{
+        top: 100%;
+    }
+
+    .swiper-button-prev{
+        right: 55px;
+        left: auto;
+    }
+
+    .swiper-button-next{
+        right: 15px;
+    }
 }

@@ -191,7 +191,7 @@
             left: $space_l;
             width: 0%;
             height: 2px;
-            background: $color_green;
+            background: $color_secondary;
             opacity: 1;
             transition: $trans_easeOutCubic_fast;
         }
@@ -309,7 +309,7 @@
             left: $space_l;
             width: 0%;
             height: 2px;
-            background: $color_green;
+            background: $color_secondary;
             opacity: 1;
             transition: $trans_easeOutCubic_fast;
             transform: none;
@@ -332,7 +332,7 @@
                 transition: $trans_easeOutCubic_fast;
                 transform: translateX(-5px);
                 margin-top: 0px;
-                color: $color_green;
+                color: $color_secondary;
                 transition-delay: 150ms;
             }
         }
@@ -440,11 +440,11 @@ body {
         text-decoration: none;
         font-family: $font_family_1;
         font-weight: 700;
-        color: $color_blue_sky !important;
+        color: $color_white !important;
         transition: $trans_linear_fast;
 
         &:hover {
-            color: $color_green !important;
+            color: $color_secondary !important;
         }
     }
 
@@ -486,7 +486,7 @@ body {
 .navbar-we-mega-menu.navbar .nav .open > a{
     @include mq($until: md) {
         text-transform: uppercase;
-        border-bottom: thin solid $color_green !important;
+        border-bottom: thin solid $color_secondary !important;
         padding-left: 0px;
         padding-right: 0px;
     }

@@ -64,6 +64,10 @@
         @include mq(lg) {
             font-size: 14px;
         }
+
+        &:hover {
+            color: $color_primary;
+        }
     }
 }
 

@@ -52,3 +52,17 @@ function berry_theme_suggestions_field_alter(&$suggestions, &$variables) {
         $suggestions[] = 'field__content_only__multiple';
     }
 }
+
+
+
+/*
+    Add path-alias as body class
+*/
+function berry_preprocess_html(&$variables) {
+    $current_path = \Drupal::service('path.current')->getPath();
+    $path = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+    if ($current_alias) {
+        $current_alias = ltrim($current_alias, '/');
+        $variables['attributes']['class'][] = 'path-' . \Drupal\Component\Utility\Html::cleanCssIdentifier($current_alias);
+    }
+}

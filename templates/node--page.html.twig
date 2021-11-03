@@ -128,14 +128,17 @@
     {#
         Print Link field with custom markup (use "Link" as field formatter and NOT "separate link and text")
     #}
+    <h2>Simple link</h2>
     <div class="field__link">
         <a href="{{ content.field_link.0['#url'] }}" class="c-button">{{ content.field_link.0['#title'] }}</a>
     </div>
 
 
 
-    {# Using link field multiple #}
     {#
+        Using link field multiple
+    #}
+    <h2>Multiple links</h2>
     <div class="field__links">
         {% for i in 0 .. node.field_links|length - 1 %}
             {% set item = content.field_links[i] %}
@@ -144,7 +147,6 @@
             </div>
         {% endfor %}
     </div>
-    #}
 
 
 

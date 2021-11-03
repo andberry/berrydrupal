@@ -103,10 +103,22 @@
 */
 @mixin menu-base-h() {
     display: flex;
+    margin: 0px;
+    padding: 0px;
 
     & > li {
+        margin: 0px;
+        padding: 0px;
+
         & > a {
             display: block;
+            @include px($space_xs);
+        }
+
+        &:first-child {
+            a {
+                padding-left: 0px;
+            }
         }
     }
 }
@@ -119,8 +131,17 @@
 */
 @mixin menu-base-v() {
     display: block;
+    margin: 0px;
+    padding: 0px;
 
     & > li {
         display: block;
+        margin: 0px;
+        padding: 0px;
+
+        & > a {
+            display: inline-block;
+            @include py($space_2xs);
+        }
     }
 }

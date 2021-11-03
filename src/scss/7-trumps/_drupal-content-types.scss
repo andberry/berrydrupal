@@ -3,10 +3,10 @@
 */
 body.page-node-type-page {
     #main-content {
-        padding-bottom: $space_2xl;
+        @include py($space_2xl);
 
         @include mq(xl) {
-            padding-bottom: $space_3xl;
+            @include py($space_3xl);
         }
     }
 }

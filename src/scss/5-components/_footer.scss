@@ -4,222 +4,23 @@
 
 .c-footer-top {
 
-
-    .c-prefooter {
-        @include mq(md) {
-            @include py(0);
-            @include py($space_l);
-        }
-
-        .grid {
-            @include mq($until: md) {
-                grid-row-gap: 0px;
-            }
-        }
-    }
-
-    .c-prefooter__block {
-        @include py($space_m);
-        position: relative;
-        z-index: $zindex_10;
-        @include grid-cell-span(2);
-
-        @include mq(md) {
-            @include py($space_2xl);
-        }
-
-        .c-prefooter__block__button {
-            box-shadow: $box_shadow;
-        }
-    }
-
-    .c-prefooter__block__title {
-        font-weight: 700;
-        font-size: remCalc(28);
-    }
-
-    .c-prefooter__block__text {
-        margin-top: $space_m;
-        font-weight: 500;
-        @include responsive-property("font-size", $font_size_6);
-    }
-
-    .c-prefooter__block__button {
-        margin-top: $space_l;
-
-        i {
-            font-size: remCalc(22);
-        }
-    }
-
 }
 
 .c-footer-main {
-    background: $color_black;
-    color: $color_white;
     padding-top: $space_2xl;
     padding-bottom: $space_3xl;
 
-    a {
-        color: $color_white;
+    .menu {
+        @include menu-base-h();
     }
 }
 
-.region-footer-main {
-    @include grid();
-
-    & > * {
-        @include grid-cell-span(2);
-    }
-
-    .menu-item {
-        padding: 0px;
-        a {
-            font-weight: 500;
-            font-size: 14px;
-            text-transform: uppercase;
-            text-decoration: none;
-            @include py($space_xs);
-            display: inline-block;
-            line-height: 1;
-
-            &:hover {
-                color: $color_secondary;
-            }
-        }
-    }
-
-
-    h2 {
-        @include responsive-property("font-size", $font_size_5);
-        margin-bottom: $space_s;
-        font-weight: 700;
-    }
-
-
-    ul.menu {
-        @include menu-base-v();
-    }
-
-    .block-webform {
-        background: $color_white;
-        color: $color_black;
-        padding: $space_l;
-        position: relative;
-
-        .form-actions {
-            position: absolute;
-            bottom: 0px;
-            right: $space_l;
-            transform: translateY(50%);
-            margin: 0px;
-        }
-
-        .form-item-privacy-policy {
-            padding-bottom: remCalc(12);
-            padding-left: 0px;
-            font-size: 14px;
-        }
-
-        input[type="text"],
-        input[type="email"] {
-            border: thin solid $color_black;
-            color: $color_black;
-        }
-    }
-}
 
 .c-footer-bottom {
     background: $color_black0;
     color: $color_white;
+    font-size: remCalc(14);
     display: flex;
     justify-content: center;
     @include py($space_m);
-
-    .menu {
-        @include mq(md) {
-            display: flex;
-            justify-content: center;
-        }
-    }
-
-    .menu-item {
-        &:not(:last-child) {
-            @include mq(md) {
-                a:after {
-                    content: '';
-                    position: absolute;
-                    display: block;
-                    top: 0px;
-                    right: 0px;
-                    width: 1px;
-                    height: 100%;
-                    background-color: $color_white;
-                }
-            }
-
-        }
-
-        a {
-            display: inline-block;
-            position: relative;
-            color: $color_white;
-            font-weight: 300;
-            font-size: 14px;
-            text-decoration: none;
-            margin-bottom: $space_s;
-
-            @include mq(md) {
-                @include px($space_s);
-                margin-bottom: 0px;
-            }
-
-            @include mq(lg) {
-                @include px($space_m);
-            }
-        }
-    }
-}
-
-.menu--footer-bottom-menu {
-    & > .menu {
-        @include mq(md) {
-            display: flex;
-            align-items: center;
-        }
-    }
-}
-
-
-#block-socialsfooter {
-    .field__item {
-        display: inline-block;
-        margin-right: $space_xs;
-
-        a {
-            display: block;
-            border-radius: 50%;
-            background: $color_white;
-            color: $color_black0;
-            text-decoration: none;
-            width: 40px;
-            height: 40px;
-            position: relative;
-
-            i {
-                display: block;
-                @include abs-center();
-                font-size: remCalc(20);
-                transition: $trans_easeOutCubic_fast;
-                transform: translateX(-50%) translateY(-50%);
-            }
-
-            &:hover {
-                color: $color_primary;
-                i {
-                    transform: translateX(-50%) translateY(calc(-50% - 2px));
-                }
-            }
-        }
-    }
 }

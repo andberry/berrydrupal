@@ -1,5 +1,6 @@
 // gulp base
 const { src, dest, series, parallel, watch } = require('gulp');
+const { exec } = require('child_process');
 
 // css
 const sass = require('gulp-sass');
@@ -111,6 +112,17 @@ function browserSyncInit(done) {
   done();
 }
 
+
+
+// clear Drupal Cache (for template change)
+function clearDrupalCache (done) {
+    exec('drush cr', (err, stdout, stderr) => {
+        console.log(stdout);
+    });
+
+    done();
+}
+
 // BrowserSync: reload
 function browserSyncReload(done) {
   browserSync.reload();
@@ -128,7 +140,7 @@ function watchFiles(done) {
   watch("src/scss/**/*.scss", cssDev);
   watch("src/js/**/*.js", jsDev);
   watch("*.html").on('change', browserSync.reload);
-  watch("templates/**/*.twig").on('change', browserSync.reload);
+  watch("templates/**/*.twig").on('change', series(clearDrupalCache, browserSync.reload));
   watch("src/images/**/*", images);
 }
 

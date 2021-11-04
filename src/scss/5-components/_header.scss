@@ -30,26 +30,11 @@
         @include menu-base-h();
 
         & > li {
-            @include py(0);
-
             & > a {
-                padding: $space_2xs $space_m;
-                text-decoration: none;
+                padding: $space_2xs $space_s;
                 text-transform: uppercase;
                 font-size: remCalc(14);
-                font-weight: 500;
                 line-height: 1;
-                color: $color_black;
-
-                &:hover {
-                    color: $color_primary;
-                }
-            }
-
-            &:last-child {
-                a {
-                    padding-right: 0px;
-                }
             }
         }
     }
@@ -72,28 +57,30 @@
 
     /* Header main menu */
     .block-menu > ul.menu {
-        @include menu-base-h();
+        @include mq(lg) {
+            @include menu-base-h();
 
-        & > li {
-            @include py(0);
+            & > li {
+                & > a {
+                    padding: $space_xs $space_l;
 
-            & > a {
-                padding: $space_2xs $space_m;
-                text-decoration: none;
-                text-transform: uppercase;
-                font-size: remCalc(14);
-                font-weight: 500;
-                line-height: 1;
-                color: $color_black;
-
-                &:hover {
-                    color: $color_primary;
+                    line-height: 1;
                 }
             }
 
-            &:last-child {
+            /*
+                UIkit navbar dropdown style
+            */
+            .uk-navbar-dropdown-nav {
+                li {
+                    padding: 0px;
+                }
+
                 a {
-                    padding-right: 0px;
+                    font-size: remCalc(16);
+                    text-decoration: none;
+                    display: block;
+                    padding: $space_s $space_l;
                 }
             }
         }

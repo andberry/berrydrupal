@@ -105,6 +105,7 @@
     display: flex;
     margin: 0px;
     padding: 0px;
+    list-style-type: none;
 
     & > li {
         margin: 0px;
@@ -112,12 +113,17 @@
 
         & > a {
             display: block;
-            @include px($space_xs);
         }
 
         &:first-child {
-            a {
+            & > a {
                 padding-left: 0px;
+            }
+        }
+
+        &:last-child {
+            & > a {
+                padding-right: 0px;
             }
         }
     }
@@ -133,6 +139,7 @@
     display: block;
     margin: 0px;
     padding: 0px;
+    list-style-type: none;
 
     & > li {
         display: block;

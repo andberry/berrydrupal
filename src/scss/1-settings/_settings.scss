@@ -98,6 +98,7 @@ $button_height: 48px;
 $zindex_10: 10;
 $zindex_100: 100;
 $zindex_1000: 1000;
+$zindex_10000: 10000;
 
 
 
@@ -252,5 +253,31 @@ $animation-kenburns-duration: 6s !default;
 $animation-fast-duration: 0.1s !default;
 $animation-slide-small-translate: 15px;
 $animation-slide-medium-translate: 50px !default;
+
+$navbar-background: transparent;
+$navbar-nav-item-height: 0px;
+$navbar-nav-item-color: $color_text;
+$navbar-nav-item-font-size: remCalc(16);
+$navbar-nav-item-font-family: $font_family_1;
+$navbar-nav-item-active-color: $color_text;
+$navbar-nav-item-hover-color: $color_primary;
+
+$navbar-dropdown-nav-item-color: $color_text;
+$navbar-dropdown-nav-item-hover-color: $color_primary;
+$navbar-dropdown-nav-item-active-color: $color_text;
+
+$dropdown-background: $color_grey;
+$dropdown-min-width: 200px;
+$dropdown-padding: $space_xl $space_l;
+$dropdown-color: $color_text;
+$dropdown-margin: 0px;
+$dropdown-nav-item-color: tomato;
+$dropdown-nav-item-hover-color: green;
+
+$offcanvas-z-index: $zindex_10000;
+$offcanvas-bar-width: 270px;
+$offcanvas-bar-padding-vertical: $space_m;
+$offcanvas-bar-padding-horizontal: $space_l;
+$offcanvas-bar-background: $color_white;
 
 @import "uikit/src/scss/variables";

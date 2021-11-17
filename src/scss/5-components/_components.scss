@@ -15,9 +15,11 @@
 */
 /* vendors */
 /* @import './font-awesome/fontawesome'; */ // already imported in tools
+/*
 @import './font-awesome/solid';
 @import './font-awesome/regular';
 @import './font-awesome/brands';
+*/
 
 /* for gallery lightbox */
 @import 'lightgallery.js/src/sass/lightgallery';
@@ -53,9 +55,9 @@
 @import 'c-header-top-bar';
 @import 'footer';
 
-@import 'menu_mobile_fixed';
+// @import 'menu_mobile_fixed';
 @import 'menu_mobile_toggle';
-@import 'menu_desktop_dropdown';
+// @import 'menu_desktop_dropdown';
 // @import 'menu_desktop_megamenus';
 
 @import 'buttons';

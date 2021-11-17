@@ -43,7 +43,12 @@
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
 
 <div id="responsive-nav-container" class="js-responsive-nav-container">
-    <nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes.addClass(classes)|without('role', 'aria-labelledby') }} uk-dropdown="toggle: .uk-navbar-toggle; boundary: .c-header-main; boundary-align: true; pos: bottom-justify; offset: 10; animation: uk-animation-slide-top-small; duration: 300;">
+    <nav
+        role="navigation"
+        aria-labelledby="{{ heading_id }}"
+        {{ attributes.addClass(classes)|without('role', 'aria-labelledby') }}
+        uk-dropdown="toggle: .uk-navbar-toggle; boundary: .c-header-main; boundary-align: true; pos: bottom-justify; offset: 12;">
+
         {% if not configuration.label_display %}
             {% set title_attributes = title_attributes.addClass('visually-hidden') %}
         {% endif %}
@@ -57,5 +62,10 @@
             {{ content }}
         {% endblock %}
     </nav>
+
+    <a class="uk-navbar-toggle mobile-menu-toggle__ham u-hide-on-desktop" href="#" uk-toggle="target: .js-responsive-nav; cls: mao;">
+        <div class="first"></div>
+        <div class="second"></div>
+        <div class="third"></div>
+    </a>
 </div>
-<a class="uk-navbar-toggle u-hide-on-desktop" uk-navbar-toggle-icon href="#"></a>

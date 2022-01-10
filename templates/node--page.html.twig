@@ -87,11 +87,14 @@
   <div{{ content_attributes.addClass('node__content') }}>
 
     {# Print a simple text field (plain or long/html) #}
+    {#
     <div class="field__content">
         {{ content.field_content }}
     </div>
+    #}
 
     {# Print a c-gallery component with single fields on node #}
+    {#
     <div class="field__gallery">
         {% set cdata = [] %}
         {% for item in node.field_gallery %}
@@ -104,40 +107,48 @@
             ]) %}
         {% endfor %}
 
-        {% include '@berry/components/c-gallery.html.twig' with {
+        {% include '@berrypg/components/c-gallery.html.twig' with {
             'title': content.field_title,
             'items': cdata
         }%}
     </div>
+    #}
 
     {# Print c-gallery component using paragraph #}
+    {#
     <div class="field__paragraph-gallery">
         {{ content.field_paragraph_gallery }}
     </div>
+    #}
 
     {# Print c-textimage component using fields on node #}
+    {#
     <div class="field__text-image">
-        {% include '@berry/components/c-textimage.html.twig' with {
+        {% include '@berrypg/components/c-textimage.html.twig' with {
             'title_tag': 'h5',
             'title': content.field_text_image_title,
             'text': content.field_text_image_content,
             'image': content.field_text_image_image.0
         }%}
     </div>
+    #}
 
     {#
         Print Link field with custom markup (use "Link" as field formatter and NOT "separate link and text")
     #}
+    {#
     <h2>Simple link</h2>
     <div class="field__link">
         <a href="{{ content.field_link.0['#url'] }}" class="c-button">{{ content.field_link.0['#title'] }}</a>
     </div>
+    #}
 
 
 
     {#
         Using link field multiple
     #}
+    {#
     <h2>Multiple links</h2>
     <div class="field__links">
         {% for i in 0 .. node.field_links|length - 1 %}
@@ -147,20 +158,25 @@
             </div>
         {% endfor %}
     </div>
+    #}
 
 
 
     {# Print File field with custom markup (handle with and without description) #}
+    {#
     <div class="field__file">
         {% set file_url = file_url(node.field_file.0.entity.uri.value) %}
         {% set file_desc = (node.field_file.0.description) ? node.field_file.0.description : node.field_file.0.entity.filename.value %}
         <a href="{{ file_url }}" class="c-button--light">{{ file_desc }}</a>
     </div>
+    #}
 
     {# Carousel using paragraph #}
+    {#
     <div class="field__carousel">
         {{ content.field_paragraph_carousel }}
     </div>
+    #}
 
 
 
